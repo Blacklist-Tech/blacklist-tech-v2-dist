@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience // NYC's Elite Technical Vanguard</title>
+    <meta name="description" content="Meet the legends behind Blacklist Tech. NYC's elite technicians and software engineers who came from the trenches of nightlife to build the future of production.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #000000;
+            --accent-cyan: #00bfff;
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo, .tagline { font-family: 'Outfit', sans-serif; }
+
+        /* --- MOVING STAGE LIGHTS --- */
+        .stage-lights { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .light-beam {
+            position: absolute;
+            top: -150px;
+            width: 800px;
+            height: 200vh;
+            background: linear-gradient(180deg, rgba(0, 191, 255, 0.2) 0%, rgba(0, 191, 255, 0.05) 40%, transparent 80%);
+            clip-path: polygon(45% 0%, 55% 0%, 100% 100%, 0% 100%);
+            filter: blur(50px);
+            transform-origin: top center;
+            opacity: 0.5;
+            animation: sweep 14s ease-in-out infinite alternate;
+        }
+        @keyframes sweep {
+            0% { transform: rotate(-8deg) translateX(-5%); }
+            100% { transform: rotate(8deg) translateX(5%); }
+        }
+        .light-1 { left: -10%; animation-duration: 15s; animation-delay: -2s; }
+        .light-2 { left: 15%; animation-duration: 20s; animation-delay: -5s; opacity: 0.3; }
+        .light-3 { right: 15%; animation-duration: 18s; animation-delay: -7s; opacity: 0.3; }
+        .light-4 { right: -10%; animation-duration: 16s; animation-delay: -1s; }
+
+        nav { position: fixed; top: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+        .logo { font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; color: white; text-decoration: none; }
+        .logo span { color: var(--accent-cyan); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+
+        .container { position: relative; z-index: 10; max-width: 1100px; margin: 0 auto; padding: 200px 40px 100px; }
+        header { margin-bottom: 80px; text-align: center; }
+        h1 { font-size: clamp(3rem, 10vw, 5rem); font-weight: 900; letter-spacing: -0.04em; margin-bottom: 24px; line-height: 0.9; }
+        h1 span { color: var(--accent-cyan); }
+        .tagline { color: var(--accent-cyan); font-size: 0.7rem; letter-spacing: 8px; text-transform: uppercase; font-weight: 700; margin-bottom: 30px; display: block; }
+        .built-for { text-transform: uppercase; letter-spacing: 6px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; color: var(--text-main); }
+
+        .bio-section { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; margin-top: 100px; align-items: start; }
+        .bio-image { width: 100%; aspect-ratio: 4/5; background: var(--surface); border: 1px solid var(--border); border-radius: 40px; position: relative; overflow: hidden; }
+        .bio-image::after { content: 'PRACTITIONER.01'; position: absolute; bottom: 20px; left: 20px; font-family: 'Inter'; font-weight: 900; font-size: 0.6rem; letter-spacing: 4px; color: var(--accent-cyan); }
+
+        .bio-content h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 30px; letter-spacing: -0.02em; }
+        .bio-content p { font-size: 1.25rem; color: var(--text-dim); margin-bottom: 30px; font-weight: 300; }
+        .bio-content strong { color: var(--text-main); font-weight: 700; }
+
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
+        .stat-card { background: var(--surface); border: 1px solid var(--border); padding: 40px; border-radius: 30px; transition: var(--transition-smooth); }
+        .stat-card:hover { border-color: var(--accent-cyan); background: rgba(0, 191, 255, 0.03); }
+        .stat-val { font-size: 2.5rem; font-weight: 900; color: var(--accent-cyan); display: block; margin-bottom: 10px; }
+        .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; color: var(--text-dim); }
+
+        .nyc-signal { margin-top: 150px; padding: 100px 60px; background: rgba(255, 255, 255, 0.02); border-radius: 60px; text-align: center; border: 1px solid var(--border); }
+        .nyc-signal h3 { font-size: 2rem; font-weight: 900; margin-bottom: 20px; }
+
+        footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); margin-top: 100px; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition-smooth); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+</head>
+<body>
+    <div class="stage-lights">
+        <div class="light-beam light-1"></div>
+        <div class="light-beam light-2"></div>
+        <div class="light-beam light-3"></div>
+        <div class="light-beam light-4"></div>
+    </div>
+
+    <nav>
+        <a href="../" class="logo">BLACKLIST<span>.TECH</span></a>
+        <div class="nav-links">
+            <a href="../services/">Services</a>
+            <a href="../projects/">Products</a>
+            <a href="./" class="active">Experience</a>
+            <a href="mailto:admin@blacklisttech.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header>
+            <span class="tagline reveal">The Practitioners</span>
+            <h1 class="reveal">Legends & <span>Experts.</span></h1>
+            <p class="built-for reveal">Built for DJs, VJs, and Lighting Directors.</p>
+        </header>
+
+        <section class="bio-section">
+            <div class="bio-image reveal">
+                <!-- Placeholder for high-end studio portrait -->
+                <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #111, #000); display: flex; align-items: center; justify-content: center; font-family: 'Outfit'; font-weight: 900; color: #222; font-size: 5rem;">BT</div>
+            </div>
+            <div class="bio-content reveal">
+                <h2>Forged in the Night.</h2>
+                <div class="stats-grid" style="margin-bottom: 40px; grid-template-columns: 1fr;">
+                    <div class="stat-card" style="border-left: 4px solid var(--accent-cyan);">
+                        <span class="stat-val">$20,000+</span>
+                        <span class="stat-label">Gear Repaired (Initial 72 Hours)</span>
+                    </div>
+                    <div class="stat-card" style="border-left: 4px solid var(--accent-cyan);">
+                        <span class="stat-val">100+ Days</span>
+                        <span class="stat-label">Downtime Avoided // Marquee NYC</span>
+                    </div>
+                </div>
+
+                <p style="font-size: 1.1rem;">Operational partners for <strong>Crane Club</strong> and <strong>PHD Rooftop</strong>. While Blacklist Tech was officially founded this year, our engineering core possesses over a decade of high-stakes technical expertise in the NYC circuit.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-val">12+</span>
+                        <span class="stat-label">Years NYC Experience</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-val">500+</span>
+                        <span class="stat-label">Units Rescued</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="nyc-signal reveal">
+            <h3>Manhattan HQ</h3>
+            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 40px;">Located at the heart of the world's most intense nightlife circuit. We provide certified technical support across Manhattan, Brooklyn, and the Tri-State area.</p>
+            <a href="mailto:admin@blacklisttech.com" style="color: var(--accent-cyan); text-decoration: none; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem;">Contact our Engineers &rarr;</a>
+        </section>
+
+        <footer>
+            &copy; 2026 Blacklist Tech // Manhattan HQ: NYC Pioneer Repair Specialist // The Operating System for the Night
+        </footer>
+    </main>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
+
