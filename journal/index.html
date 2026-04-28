@@ -37,7 +37,11 @@
         h1 { font-family: 'Outfit'; font-size: 4rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 20px; }
 
         .journal-list { display: flex; flex-direction: column; gap: 60px; }
-        .post-card { text-decoration: none; color: inherit; display: block; border-bottom: 1px solid var(--border); padding-bottom: 60px; transition: var(--transition-smooth); }
+        .post-card { 
+            text-decoration: none; color: inherit; display: block; 
+            border-bottom: 1px solid var(--border); padding-bottom: 60px; 
+            transition: var(--transition-smooth); cursor: pointer;
+        }
         .post-card:hover { transform: translateX(10px); }
         .post-card:hover h2 { color: var(--accent-cyan); }
 
@@ -46,7 +50,6 @@
         .post-excerpt { color: var(--text-dim); font-size: 1.1rem; line-height: 1.7; }
 
         footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); margin-top: 100px; }
-    </style>
 
         /* Article Overlay */
         .article-overlay {
@@ -73,6 +76,7 @@
         .article-body p { margin-bottom: 24px; }
         .article-body code { font-family: 'JetBrains Mono'; color: var(--accent-cyan); background: rgba(0,191,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
         .article-body blockquote { border-left: 3px solid var(--accent-cyan); padding-left: 30px; margin: 40px 0; color: #888; font-style: italic; }
+    </style>
 </head>
 <body>
     <nav>
@@ -81,6 +85,7 @@
             <a href="../services/">Services</a>
             <a href="../projects/">Products</a>
             <a href="./" style="color: white;">Journal</a>
+            <a href="../about/">Experience</a>
             <a href="mailto:admin@blacklisttech.com">Contact</a>
         </div>
     </nav>
@@ -92,36 +97,42 @@
             <p style="color: var(--text-dim); font-size: 1.2rem; max-width: 600px;">Engineering notes, repair case studies, and protocol research from the Blacklist NYC HQ.</p>
         </header>
 
-                <div class="journal-list">
+        <div class="journal-list">
             <!-- ENTRY 01 -->
-            <div class="post-card" onclick="openArticle('pioneer-psu')" style="cursor: pointer;">
+            <div class="post-card" onclick="openArticle('pioneer-psu')">
                 <div class="post-meta">April 28, 2026 // Hardware Engineering</div>
                 <h2 class="post-title">Diagnosing CDJ-2000NXS2 Power Supply Sag.</h2>
                 <p class="post-excerpt">A deep dive into why high-end Pioneer hardware sometimes reboots under heavy bass load, and the component-level fix involving low-ESR capacitors.</p>
             </div>
 
             <!-- ENTRY 02 -->
-            <div class="post-card" onclick="openArticle('psx-dsp')" style="cursor: pointer;">
+            <div class="post-card" onclick="openArticle('psx-dsp')">
                 <div class="post-meta">April 20, 2026 // Software Development</div>
                 <h2 class="post-title">Implementing the PSX SPU Topology in Rust.</h2>
                 <p class="post-excerpt">How we translated 1994 hardware register logic into a modern VST3 engine using the nih-plug framework and Vizia UI.</p>
             </div>
 
             <!-- ENTRY 03 -->
-            <div class="post-card" onclick="openArticle('ma3-osc')" style="cursor: pointer;">
+            <div class="post-card" onclick="openArticle('ma3-osc')">
                 <div class="post-meta">April 12, 2026 // Lighting Control</div>
                 <h2 class="post-title">GrandMA3 OSC Bridges for Resolume.</h2>
                 <p class="post-excerpt">Optimizing network latency between lighting consoles and media servers using custom Python bridges and UDP protocol hardening.</p>
             </div>
         </div>
-        </div>
 
-
+        <footer>
             &copy; 2026 Blacklist Tech // Manhattan HQ // The Operating System for the Night
         </footer>
     </main>
 
-<script>
+    <div class="article-overlay" id="article-overlay">
+        <div class="close-btn" id="close-article">ESC // CLOSE</div>
+        <div class="article-content" id="article-target">
+            <!-- Content Injected via JS -->
+        </div>
+    </div>
+
+    <script>
         const journalData = {
             "pioneer-psu": {
                 date: "April 28, 2026 // Hardware Engineering",
@@ -192,22 +203,31 @@ fn process_allpass(&mut self, input: f32) -> f32 {
                 <h1 style="font-family: 'Outfit'; font-size: 3.5rem; margin-bottom: 20px;">${data.title}</h1>
                 <div class="article-body">${data.content}</div>
             `;
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            overlay.style.display = 'block'; // Ensure it's visible before adding class
+            setTimeout(() => {
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }, 10);
         }
 
         closeBtn.addEventListener('click', () => {
             overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 600);
         });
 
         // Close on ESC
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 overlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 600);
             }
         });
-</script>
-
+    </script>
+</body>
 </html>
