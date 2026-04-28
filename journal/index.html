@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Journal // Blacklist Tech NYC</title>
+    <meta name="description" content="Technical logs, repair case studies, and engineering notes from Blacklist Tech. Deep dives into Pioneer DJ repair and lighting automation.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://www.blacklisttech.com/journal/" />
+    
+    <style>
+        :root {
+            --bg: #000000;
+            --accent-cyan: #00bfff;
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--bg); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.6; }
+        
+        nav { position: fixed; top: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .logo { font-family: 'Outfit'; font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; color: white; text-decoration: none; }
+        .logo span { color: var(--accent-cyan); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+        .nav-links a:hover { color: var(--text-main); }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 200px 40px 100px; }
+        header { margin-bottom: 100px; }
+        .tagline { color: var(--accent-cyan); font-size: 0.7rem; letter-spacing: 6px; text-transform: uppercase; font-weight: 700; margin-bottom: 20px; display: block; }
+        h1 { font-family: 'Outfit'; font-size: 4rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 20px; }
+
+        .journal-list { display: flex; flex-direction: column; gap: 60px; }
+        .post-card { text-decoration: none; color: inherit; display: block; border-bottom: 1px solid var(--border); padding-bottom: 60px; transition: var(--transition-smooth); }
+        .post-card:hover { transform: translateX(10px); }
+        .post-card:hover h2 { color: var(--accent-cyan); }
+
+        .post-meta { font-family: 'JetBrains Mono'; font-size: 0.75rem; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+        .post-title { font-family: 'Outfit'; font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; transition: var(--transition-smooth); }
+        .post-excerpt { color: var(--text-dim); font-size: 1.1rem; line-height: 1.7; }
+
+        footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); margin-top: 100px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../" class="logo">BLACKLIST<span>.TECH</span></a>
+        <div class="nav-links">
+            <a href="../services/">Services</a>
+            <a href="../projects/">Products</a>
+            <a href="./" style="color: white;">Journal</a>
+            <a href="mailto:admin@blacklisttech.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header>
+            <span class="tagline">The Technician's Log</span>
+            <h1>Technical Journal.</h1>
+            <p style="color: var(--text-dim); font-size: 1.2rem; max-width: 600px;">Engineering notes, repair case studies, and protocol research from the Blacklist NYC HQ.</p>
+        </header>
+
+        <div class="journal-list">
+            <!-- ENTRY 01 -->
+            <a href="#" class="post-card">
+                <div class="post-meta">April 28, 2026 // Hardware Engineering</div>
+                <h2 class="post-title">Diagnosing CDJ-2000NXS2 Power Supply Sag.</h2>
+                <p class="post-excerpt">A deep dive into why high-end Pioneer hardware sometimes reboots under heavy bass load, and the component-level fix involving low-ESR capacitors.</p>
+            </a>
+
+            <!-- ENTRY 02 -->
+            <a href="#" class="post-card">
+                <div class="post-meta">April 20, 2026 // Software Development</div>
+                <h2 class="post-title">Implementing the PSX SPU Topology in Rust.</h2>
+                <p class="post-excerpt">How we translated 1994 hardware register logic into a modern VST3 engine using the nih-plug framework and Vizia UI.</p>
+            </a>
+
+            <!-- ENTRY 03 -->
+            <a href="#" class="post-card">
+                <div class="post-meta">April 12, 2026 // Lighting Control</div>
+                <h2 class="post-title">GrandMA3 OSC Bridges for Resolume.</h2>
+                <p class="post-excerpt">Optimizing network latency between lighting consoles and media servers using custom Python bridges and UDP protocol hardening.</p>
+            </a>
+        </div>
+
+        <footer>
+            &copy; 2026 Blacklist Tech // Manhattan HQ // The Operating System for the Night
+        </footer>
+    </main>
+</body>
+</html>

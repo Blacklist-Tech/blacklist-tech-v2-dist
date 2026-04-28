@@ -9,17 +9,48 @@
     
     <!-- Local Business Schema -->
     <script type="application/ld+json">
-    {
+        {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Blacklist Tech",
-      "description": "NYC's premier technical production and certified DJ equipment repair center.",
+      "description": "NYC's premier technical production and certified Pioneer DJ equipment repair center.",
+      "url": "https://www.blacklisttech.com",
+      "telephone": "+1-555-BLACKLIST",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Manhattan",
         "addressRegion": "NY",
+        "postalCode": "10001",
         "addressCountry": "US"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.7128",
+        "longitude": "-74.0060"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Technical Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pioneer DJ Equipment Repair",
+              "description": "Component-level repair for CDJ, DJM, and XDJ series hardware."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "GrandMA3 Lighting Automation",
+              "description": "Professional lighting programming and logic automation for venue systems."
+            }
+          }
+        ]
+      }
+    },
       "url": "https://www.blacklisttech.com",
       "telephone": "+1-555-BLACKLIST",
       "priceRange": "$$",
@@ -221,7 +252,7 @@
         <div class="nav-links">
             <a href="./services/">Services</a>
             <a href="./projects/">Products</a>
-            <a href="./about/">Experience</a>
+            <a href="./journal/">Journal</a>`n            <a href="./about/">Experience</a>
             <a href="mailto:admin@blacklisttech.com">Contact</a>
         </div>
     </nav>
