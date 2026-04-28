@@ -61,7 +61,7 @@
         .ab-line { position: absolute; top: 0; left: 50%; width: 2px; height: 100%; background: white; pointer-events: none; z-index: 10; }
         .ab-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: white; border-radius: 50%; z-index: 15; pointer-events: none; display: flex; align-items: center; justify-content: center; color: black; font-weight: 900; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
 
-        .vst-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px; padding-top: 60px; border-top: 1px solid var(--border); }
+        .vst-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; padding-top: 60px; border-top: 1px solid var(--border); }
         .vst-item { display: flex; flex-direction: column; }
         .alpha-badge { display: inline-block; font-family: 'JetBrains Mono'; font-size: 0.65rem; color: #ff5555; background: rgba(255,62,62,0.1); border: 1px solid rgba(255,62,62,0.3); border-radius: 4px; padding: 4px 10px; margin-bottom: 12px; font-weight: 700; width: fit-content; letter-spacing: 2px; }
         .vst-name { font-family: 'Outfit'; font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
@@ -162,7 +162,7 @@
                         </div>
                         <button class="btn dl-trigger" data-file="/projects/downloads/Haunted_Delay_Artist_Edition.zip" data-name="Haunted Delay">Get Alpha</button>
                     </div>
-                    <!-- PSX REVERB -->
+<!-- PSX REVERB -->
                     <div class="vst-item">
                         <span class="alpha-badge">ALPHA</span>
                         <h3 class="vst-name">PSX Reverb</h3>
@@ -183,9 +183,19 @@
                             <div class="stat-item"><span class="stat-val">SPL</span><span class="stat-label">Optimized</span></div>
                             <div class="stat-item"><span class="stat-val">DSP</span><span class="stat-label">Fast</span></div>
                         </div>
-                        <button class="btn dl-trigger" data-file="/projects/downloads/Micro_Aggressor_Artist_Edition_v1.zip" data-name="Micro Aggressor">Get Alpha</button>
+                        <button class="btn dl-trigger" data-file="/projects/downloads/Micro_Aggressor_Artist_Edition_v1.zip" data-name="
+                    <!-- HAUNTED DELAY -->
+                    <div class="vst-item">
+                        <span class="alpha-badge">ALPHA</span>
+                        <h3 class="vst-name">Haunted Delay</h3>
+                        <p class="vst-desc">A spectral feedback engine that "ghosts" transients. Perfect for creating evolving cinematic textures and dark, liquid delays.</p>
+                        <div class="stats">
+                            <div class="stat-item"><span class="stat-val">FFT</span><span class="stat-label">Spectral</span></div>
+                            <div class="stat-item"><span class="stat-val">32bit</span><span class="stat-label">Float</span></div>
+                        </div>
+                        <button class="btn dl-trigger" data-file="/projects/downloads/Haunted_Delay_Artist_Edition.zip" data-name="Haunted Delay">Get Alpha</button>
                     </div>
-                </div>
+</div>
             </div>
 
             <!-- PIONEER PARTS SECTION -->
