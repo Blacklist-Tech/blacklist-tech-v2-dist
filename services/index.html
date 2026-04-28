@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Services // Certified DJ Repair & MA3 Programming</title>
+    <meta name="description" content="Manhattan's premier technical production services. Certified Pioneer DJ repair, GrandMA3 automation, and high-end visual engineering for NYC's leading venues.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #000000;
+            --accent-cyan: #00bfff;
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.4;
+        }
+
+        h1, h2, h3, .logo, .tagline { font-family: 'Outfit', sans-serif; }
+
+        /* --- MOVING STAGE LIGHTS --- */
+        .stage-lights { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .light-beam {
+            position: absolute;
+            top: -150px;
+            width: 800px;
+            height: 200vh;
+            background: linear-gradient(180deg, rgba(0, 191, 255, 0.25) 0%, rgba(0, 191, 255, 0.05) 40%, transparent 80%);
+            clip-path: polygon(45% 0%, 55% 0%, 100% 100%, 0% 100%);
+            filter: blur(50px);
+            transform-origin: top center;
+            opacity: 0.6;
+            animation: sweep 12s ease-in-out infinite alternate;
+        }
+        @keyframes sweep {
+            0% { transform: rotate(-5deg) translateX(-5%); }
+            100% { transform: rotate(5deg) translateX(5%); }
+        }
+        .light-1 { left: -10%; animation-duration: 15s; animation-delay: -2s; }
+        .light-2 { left: 15%; animation-duration: 20s; animation-delay: -5s; opacity: 0.3; }
+        .light-3 { right: 15%; animation-duration: 18s; animation-delay: -7s; opacity: 0.3; }
+        .light-4 { right: -10%; animation-duration: 16s; animation-delay: -1s; }
+
+        nav { position: fixed; top: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+        .logo { font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; color: white; text-decoration: none; }
+        .logo span { color: var(--accent-cyan); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+
+        .container { position: relative; z-index: 10; max-width: 1200px; margin: 0 auto; padding: 200px 40px 100px; }
+        header { margin-bottom: 100px; text-align: center; }
+        h1 { font-size: 4rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 20px; }
+        h1 span { color: var(--accent-cyan); }
+        .tagline { color: var(--accent-cyan); font-size: 0.7rem; letter-spacing: 6px; text-transform: uppercase; font-weight: 700; margin-bottom: 30px; display: block; }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: var(--transition-smooth); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 30px; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 40px; padding: 60px; transition: var(--transition-smooth); }
+        .card:hover { border-color: var(--accent-cyan); background: rgba(255, 255, 255, 0.05); transform: translateY(-5px); }
+        .card-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.02em; }
+        .card-desc { color: var(--text-dim); line-height: 1.7; font-size: 1.1rem; margin-bottom: 40px; }
+
+        .service-list { list-style: none; }
+        .service-list li { padding: 16px 0; border-top: 1px solid var(--border); color: var(--text-main); font-size: 0.95rem; display: flex; align-items: center; gap: 12px; }
+        .service-list li::before { content: '&rarr;'; color: var(--accent-cyan); font-weight: 800; }
+
+        footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); margin-top: 100px; }
+    </style>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+    <link rel="canonical" href="https://www.blacklisttech.com/services/" />
+
+<body>
+    <div class="stage-lights">
+        <div class="light-beam light-1"></div>
+        <div class="light-beam light-2"></div>
+        <div class="light-beam light-3"></div>
+        <div class="light-beam light-4"></div>
+    </div>
+
+    <nav>
+        <a href="../" class="logo">BLACKLIST<span>.TECH</span></a>
+        <div class="nav-links">
+            <a href="./" class="active">Services</a>
+            <a href="../projects/">Products</a>
+            <a href="../about/">Experience</a>
+            <a href="mailto:admin@blacklisttech.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="reveal">
+            <span class="tagline">Mission Critical</span>
+            <h1>Expert <span>Solutions.</span></h1>
+            <p class="built-for" style="text-transform: uppercase; letter-spacing: 6px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px;">Built for DJs, VJs, and Lighting Directors.</p>
+        </header>
+
+        <div class="services-grid">
+            <div class="card reveal">
+                <h2 class="card-title">Equipment<br>Repair</h2>
+                <p class="card-desc">Manhattan's premier certified service for Pioneer DJ, Denon, and Allen & Heath. Component-level mastery for high-stakes venues.</p>
+                <ul class="service-list">
+                    <li>CDJ & DJM Experts</li>
+                    <li>Fader & Mainboard Repair</li>
+                    <li>Liquid Damage Recovery</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2 class="card-title">GrandMA3<br>Automation</h2>
+                <p class="card-desc">Advanced software engineering for lighting directors. Building the logic behind NYC's largest visual shows.</p>
+                <ul class="service-list">
+                    <li>Custom Lua Development</li>
+                    <li>Automated Layout Views</li>
+                    <li>Protocol Mapping & OSC</li>
+                </ul>
+            </div>
+            <div class="card reveal">
+                <h2 class="card-title">Visual<br>Engineering</h2>
+                <p class="card-desc">Specialized software for VJs and technical directors. From AI pipelines to safety-critical SFX logic.</p>
+                <ul class="service-list">
+                    <li>AI Visual Pipelines</li>
+                    <li>Cryo-System Safety Logic</li>
+                    <li>Custom Performance Dashboards</li>
+                </ul>
+            </div>
+            <div class="card reveal">
+                <h2 class="card-title">Custom<br>Production</h2>
+                <p class="card-desc">Elite VJ, LD, and A1 engineering for custom and private events. From boutique penthouse parties to large-scale club takeovers.</p>
+                <ul class="service-list">
+                    <li>VJ & Motion Design</li>
+                    <li>GrandMA3 Programming</li>
+                    <li>A1 Audio Engineering</li>
+                </ul>
+            </div>
+            <div class="card reveal">
+                <h2 class="card-title">Premier<br>Talent</h2>
+                <p class="card-desc">High-tier DJs available for private and corporate events. We don't just fix the gear; we know exactly how to move a room.</p>
+                <ul class="service-list">
+                    <li>Private Event DJs</li>
+                    <li>Corporate Curation</li>
+                    <li>Live Performance Support</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2026 Blacklist Tech // Manhattan HQ: NYC Pioneer Repair Specialist // The Operating System for the Night
+        </footer>
+    </main>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
+

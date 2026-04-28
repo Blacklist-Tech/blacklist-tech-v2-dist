@@ -3,524 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blacklist Tech // Studio Operations</title>
-    <meta name="description" content="High-end production tools, audio plugins, and automation for VJs, LDs, and Audio Engineers.">
+    <title>Blacklist Tech // NYC Pioneer DJ Repair & MA3 Programming</title>
+    <meta name="description" content="Certified Pioneer DJ repair and high-end GrandMA3 automation services in Manhattan. We fix the gear that fuels New York's nightlife.">
+    <meta name="keywords" content="Pioneer DJ Repair NYC, CDJ Repair Manhattan, GrandMA3 Programming NYC, Resolume Automation Brooklyn, DJ Equipment Service New York">
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Blacklist Tech",
+      "description": "NYC's premier technical production and certified DJ equipment repair center.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Manhattan",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      },
+      "url": "https://www.blacklisttech.com",
+      "telephone": "+1-555-BLACKLIST",
+      "priceRange": "$$",
+      "image": "https://www.blacklisttech.com/logo.png"
+    }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg: #0a0a0c;
-            --surface: #121216;
-            --surface-accent: #1a1a20;
-            --accent: #ff3e3e;
-            --accent-glow: rgba(255, 62, 62, 0.2);
-            --accent-dim: rgba(255, 62, 62, 0.12);
-            --text-main: #f0f0f5;
-            --text-dim: #9494a0;
-            --border: rgba(255, 255, 255, 0.06);
-            --border-accent: rgba(255, 62, 62, 0.25);
-            --glass: rgba(18, 18, 22, 0.7);
+            --bg: #000000;
+            --accent-cyan: #00bfff;
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
         body {
             background-color: var(--bg);
             color: var(--text-main);
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        /* --- Background FX --- */
-        .grid-bg {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0);
-            background-size: 40px 40px;
-            z-index: -1;
-        }
-
-        .glow-orb {
-            position: fixed;
-            top: -10%; right: -10%;
-            width: 60vw; height: 60vw;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-            z-index: -1;
-            filter: blur(80px);
-            opacity: 0.4;
-        }
-
-        .glow-orb-2 {
-            position: fixed;
-            bottom: -20%; left: -10%;
-            width: 50vw; height: 50vw;
-            background: radial-gradient(circle, rgba(100, 62, 255, 0.08) 0%, transparent 70%);
-            z-index: -1;
-            filter: blur(100px);
-        }
-
-        /* --- Layout --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 24px;
-        }
-
-        header {
-            margin-bottom: 80px;
-            text-align: center;
-        }
-
-        .logo-mark {
-            width: 48px; height: 48px;
-            background: var(--accent);
-            margin: 0 auto 24px;
-            border-radius: 4px;
-            box-shadow: 0 0 30px var(--accent-glow);
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -0.04em;
-            margin-bottom: 12px;
-            background: linear-gradient(180deg, #fff 0%, #aaa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .tagline {
-            color: var(--text-dim);
-            font-size: 1.1rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        /* --- Section Headers --- */
-        .section-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent);
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-label::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 8px;
-        }
-
-        .section-desc {
-            color: var(--text-dim);
-            font-size: 1rem;
-            margin-bottom: 40px;
-        }
-
-        section { margin-bottom: 100px; }
-
-        /* --- Tool Cards (existing style) --- */
-        .domain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .card:hover { transform: translateY(-8px); border-color: var(--border-accent); background: var(--surface-accent); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .card:hover::before { opacity: 1; }
-
-        .card-icon { font-size: 1.5rem; margin-bottom: 24px; display: block; color: var(--accent); }
-        .card-title { font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
-        .card-desc { color: var(--text-dim); line-height: 1.6; margin-bottom: 24px; font-size: 0.95rem; }
-
-        .project-list { list-style: none; }
-        .project-item {
-            display: flex; align-items: center; gap: 12px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem; color: var(--text-main);
-            padding: 8px 0; border-top: 1px solid var(--border);
-        }
-
-        .status-dot {
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: #4ade80;
-            box-shadow: 0 0 10px rgba(74, 222, 128, 0.4);
-            flex-shrink: 0;
-        }
-
-        /* --- VST Plugin Cards --- */
-        .vst-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 24px;
-        }
-
-        .vst-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 36px;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .vst-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .vst-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--border-accent);
-            box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 0 1px var(--border-accent);
-        }
-
-        .vst-card:hover::after { opacity: 1; }
-
-        .vst-badge {
-            display: inline-flex; align-items: center; gap: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
-            color: var(--accent);
-            background: var(--accent-dim);
-            border: 1px solid var(--border-accent);
-            border-radius: 4px;
-            padding: 4px 10px;
-            margin-bottom: 20px;
-        }
-
-        .vst-name {
-            font-size: 1.75rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 6px;
-            line-height: 1.1;
-        }
-
-        .vst-subtitle {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: var(--accent);
-            margin-bottom: 16px;
-            opacity: 0.8;
-        }
-
-        .vst-desc {
-            color: var(--text-dim);
-            line-height: 1.65;
-            font-size: 0.95rem;
-            margin-bottom: 28px;
-        }
-
-        .vst-features {
-            list-style: none;
-            margin-bottom: 28px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .vst-features li {
-            display: flex; align-items: flex-start; gap: 10px;
-            font-size: 0.88rem;
-            color: var(--text-dim);
             line-height: 1.4;
         }
 
-        .vst-features li::before {
-            content: '▸';
-            color: var(--accent);
-            flex-shrink: 0;
-            margin-top: 1px;
-            font-size: 0.75rem;
+        /* --- MOVING STAGE LIGHTS --- */
+        .stage-lights {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
         }
 
-        .vst-meta {
+        .light-beam {
+            position: absolute;
+            top: -150px;
+            width: 800px;
+            height: 200vh;
+            background: linear-gradient(180deg, 
+                rgba(0, 191, 255, 0.4) 0%, 
+                rgba(0, 191, 255, 0.1) 40%, 
+                transparent 80%);
+            clip-path: polygon(45% 0%, 55% 0%, 100% 100%, 0% 100%);
+            filter: blur(50px);
+            transform-origin: top center;
+            opacity: 0.7;
+            animation: sweep 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes sweep {
+            0% { transform: rotate(-5deg) translateX(-5%); }
+            100% { transform: rotate(5deg) translateX(5%); }
+        }
+
+        .light-1 { left: -10%; animation-duration: 15s; animation-delay: -2s; }
+        .light-2 { left: 15%; animation-duration: 20s; animation-delay: -5s; opacity: 0.3; }
+        .light-3 { right: 15%; animation-duration: 18s; animation-delay: -7s; opacity: 0.3; }
+        .light-4 { right: -10%; animation-duration: 16s; animation-delay: -1s; }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 30px 60px;
             display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 28px;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
         }
 
-        .vst-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            background: rgba(255,255,255,0.04);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: 3px 8px;
-        }
-
-        .btn-download {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            width: 100%;
-            padding: 14px 24px;
-            background: var(--accent);
-            color: #fff;
+        .logo {
             font-family: 'Outfit', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
+            font-weight: 900;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: white;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-            box-shadow: 0 4px 20px rgba(255, 62, 62, 0.3);
         }
 
-        .btn-download:hover {
-            background: #ff5555;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(255, 62, 62, 0.45);
-        }
+        .logo span { color: var(--accent-cyan); }
 
-        .btn-download:active { transform: translateY(0); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; transition: var(--transition-smooth); }
+        .nav-links a:hover { color: var(--text-main); }
 
-        .btn-download svg { flex-shrink: 0; }
+        main { position: relative; z-index: 10; }
 
-        /* --- Divider --- */
-        .divider {
-            width: 100%;
-            height: 1px;
-            background: var(--border);
-            margin: 80px 0;
-        }
-
-        footer {
-            margin-top: 80px;
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 0 40px;
+        }
+
+        .location-tag {
+            color: var(--accent-cyan);
+            font-size: 0.75rem;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(3.5rem, 12vw, 8rem);
+            font-weight: 900;
+            line-height: 0.9;
+            margin-bottom: 30px;
+            letter-spacing: -0.06em;
+        }
+
+        h1 span.cyan { 
+            color: var(--accent-cyan); 
+            display: inline-block;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .built-for {
+            color: var(--text-main);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .description {
+            max-width: 750px;
             color: var(--text-dim);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border);
-            padding-top: 40px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 60px;
         }
 
-        /* --- Animations --- */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .btn-group { display: flex; gap: 20px; }
+        .btn { padding: 18px 44px; border-radius: 100px; font-weight: 800; font-size: 0.9rem; text-decoration: none; transition: var(--transition-smooth); display: flex; align-items: center; gap: 10px; }
+        .btn-primary { background-color: var(--accent-cyan); color: #000; }
+        .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 191, 255, 0.5); }
+        .btn-outline { border: 1px solid rgba(255,255,255,0.2); color: #fff; background: rgba(0,0,0,0.3); }
+        .btn-outline:hover { background: #fff; color: #000; }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: var(--transition-smooth); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .pillars {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .animate { opacity: 0; animation: fadeIn 0.8s ease forwards; }
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        .delay-5 { animation-delay: 0.5s; }
-        .delay-6 { animation-delay: 0.6s; }
+        .pillar-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        .pillar-card:hover { border-color: var(--accent-cyan); transform: translateY(-10px); }
+
+        footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); }
     </style>
-</head>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+    <link rel="canonical" href="https://www.blacklisttech.com/" />
+
 <body>
-    <div class="grid-bg"></div>
-    <div class="glow-orb"></div>
-    <div class="glow-orb-2"></div>
-
-    <div class="container">
-        <header class="animate">
-            <div class="logo-mark"></div>
-            <h1>Blacklist Tech</h1>
-            <p class="tagline">Studio Operations &amp; Intelligence</p>
-        </header>
-
-        <!-- ===== BLACKLIST VST SECTION ===== -->
-        <section>
-            <div class="section-label animate delay-1">Blacklist VST</div>
-            <h2 class="section-title animate delay-1">Boutique Audio Plugins</h2>
-            <p class="section-desc animate delay-2">Built in Rust. No compromises. Slate &amp; Ghost aesthetic. For Artists by Artists.</p>
-
-            <div class="vst-grid">
-
-                <!-- PSX REVERB -->
-                <div class="vst-card animate delay-2">
-                    <div class="vst-badge">
-                        <span>●</span> VST3 · CLAP · Windows
-                    </div>
-                    <div class="vst-name">PSX Reverb</div>
-                    <div class="vst-subtitle">// HARDWARE SPU RECONSTRUCTION</div>
-                    <p class="vst-desc">An exact mathematical reconstruction of the PlayStation 1 SPU reverb topology. Seven hardware-register presets. The authentic 90s console character — now in your DAW.</p>
-                    <ul class="vst-features">
-                        <li>Authentic comb + all-pass SPU algorithm</li>
-                        <li>7 hardware presets: Room, Studio, Hall, Space, Echo, Delay, Pipe</li>
-                        <li>Cubic saturation for analog DAC warmth</li>
-                        <li>Sample-rate agnostic DSP (optimized for 44.1kHz)</li>
-                    </ul>
-                    <div class="vst-meta">
-                        <span class="vst-tag">Rust</span>
-                        <span class="vst-tag">nih-plug</span>
-                        <span class="vst-tag">Vizia UI</span>
-                        <span class="vst-tag">VST3</span>
-                    </div>
-                    <a id="download-psx-reverb" href="https://github.com/Blacklist-Tech/psx-reverb/releases/latest/download/PSX_Reverb_Blacklist_VST_v1.zip" class="btn-download">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 14h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Download Now
-                    </a>
-                </div>
-
-                <!-- MICRO AGGRESSOR -->
-                <div class="vst-card animate delay-3">
-                    <div class="vst-badge">
-                        <span>●</span> VST3 · CLAP · Windows
-                    </div>
-                    <div class="vst-name">Micro Aggressor</div>
-                    <div class="vst-subtitle">// BOUTIQUE SATURATION ENGINE</div>
-                    <p class="vst-desc">Dual-parallel compression with asymmetric analog grit. Inspired by the modern aggressive sound design of Tosin Abasi. Five precision controls. One signature sound.</p>
-                    <ul class="vst-features">
-                        <li>Soft clip drive stage with asymmetric analog character</li>
-                        <li>High-shelf clarity control for modern presence</li>
-                        <li>Bloom envelope shaping for sustain and dynamics</li>
-                        <li>Hardware-inspired 2–2–1 knob layout</li>
-                    </ul>
-                    <div class="vst-meta">
-                        <span class="vst-tag">Rust</span>
-                        <span class="vst-tag">nih-plug</span>
-                        <span class="vst-tag">Vizia UI</span>
-                        <span class="vst-tag">VST3</span>
-                    </div>
-                    <a id="download-micro-aggressor" href="https://github.com/Blacklist-Tech/blacklist-tech-docs/releases/latest/download/Micro_Aggressor_Artist_Edition_v1.zip" class="btn-download">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 14h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Download Now
-                    </a>
-                </div>
-
-                <!-- HAUNTED DELAY -->
-                <div class="vst-card animate delay-4">
-                    <div class="vst-badge">
-                        <span>●</span> VST3 · CLAP · Windows
-                    </div>
-                    <div class="vst-name">Haunted Delay</div>
-                    <div class="vst-subtitle">// SPECTRAL TAPE DELAY ENGINE</div>
-                    <p class="vst-desc">Ethereal, tape-saturated delay inspired by the cinematic guitar textures of Mark Holcomb. Spectral artifacts and haunted character built into every repeat.</p>
-                    <ul class="vst-features">
-                        <li>Tape saturation with harmonic smearing on feedback</li>
-                        <li>Spectral modulation for ghostly texture on long delays</li>
-                        <li>Pure Trinity layout — clean, focused, purpose-built</li>
-                        <li>Stereo spread control for wide, dimensional repeats</li>
-                    </ul>
-                    <div class="vst-meta">
-                        <span class="vst-tag">Rust</span>
-                        <span class="vst-tag">nih-plug</span>
-                        <span class="vst-tag">Vizia UI</span>
-                        <span class="vst-tag">VST3</span>
-                    </div>
-                    <a id="download-haunted-delay" href="https://github.com/Blacklist-Tech/blacklist-tech-docs/releases/latest/download/Haunted_Delay_Artist_Edition.zip" class="btn-download">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9M4 7l4 4 4-4M2 14h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Download Now
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <div class="divider"></div>
-
-        <!-- ===== STUDIO TOOLS SECTION ===== -->
-        <section>
-            <div class="section-label animate delay-1">Studio Intelligence</div>
-            <h2 class="section-title animate delay-1">Production Tools</h2>
-            <p class="section-desc animate delay-2">AI-driven automation for VJs, Lighting Designers, and Audio Engineers.</p>
-
-            <div class="domain-grid">
-                <!-- VJ TOOLS -->
-                <a href="#" class="card animate delay-2">
-                    <span class="card-icon">⚡</span>
-                    <h3 class="card-title">VJ Tools</h3>
-                    <p class="card-desc">AI-driven video mastering, telemetry probes, and Resolume automation suites.</p>
-                    <div class="project-list">
-                        <div class="project-item"><span class="status-dot"></span> Upscalr Studio v4 (Neural Master)</div>
-                        <div class="project-item"><span class="status-dot"></span> Hardware Detector API</div>
-                    </div>
-                </a>
-
-                <!-- MCP SERVERS -->
-                <a href="#" class="card animate delay-3">
-                    <span class="card-icon">📡</span>
-                    <h3 class="card-title">MCP Servers</h3>
-                    <p class="card-desc">Protocol bridges connecting console hardware to agentic intelligence engines.</p>
-                    <div class="project-list">
-                        <div class="project-item"><span class="status-dot"></span> MA3 MCP Pro</div>
-                        <div class="project-item"><span class="status-dot"></span> Resolume Automation MCP</div>
-                    </div>
-                </a>
-
-                <!-- LD AUTOMATION -->
-                <a href="#" class="card animate delay-4">
-                    <span class="card-icon">💡</span>
-                    <h3 class="card-title">LD Automation</h3>
-                    <p class="card-desc">Layout view generators, PDF rider architects, and pre-production Lua engines.</p>
-                    <div class="project-list">
-                        <div class="project-item"><span class="status-dot"></span> MA3 Auto Layout</div>
-                        <div class="project-item"><span class="status-dot"></span> patch2pdf (Native Lua)</div>
-                    </div>
-                </a>
-
-                <!-- WEB APPS -->
-                <a href="https://pioneer-parts-reference.netlify.app" class="card animate delay-5">
-                    <span class="card-icon">🌐</span>
-                    <h3 class="card-title">Enterprise Web</h3>
-                    <p class="card-desc">High-performance technical references and business operational dashboards.</p>
-                    <div class="project-list">
-                        <div class="project-item"><span class="status-dot"></span> Pioneer Parts Reference</div>
-                        <div class="project-item"><span class="status-dot"></span> Operational Knowledge Base</div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <footer class="animate delay-6">
-            <p>&copy; 2026 Blacklist Tech. All Rights Reserved. // SLATE &amp; GHOST ARCHITECTURE</p>
-        </footer>
+    <div class="stage-lights">
+        <div class="light-beam light-1"></div>
+        <div class="light-beam light-2"></div>
+        <div class="light-beam light-3"></div>
+        <div class="light-beam light-4"></div>
     </div>
+
+    <nav>
+        <a href="./" class="logo">BLACKLIST<span>.TECH</span></a>
+        <div class="nav-links">
+            <a href="./services/">Services</a>
+            <a href="./projects/">Products</a>
+            <a href="./about/">Experience</a>
+            <a href="mailto:admin@blacklisttech.com">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="location-tag reveal">NEW YORK CITY</div>
+            <h1 class="reveal">Production.<br>Repair. <span class="cyan" id="rotate-word">Innovation.</span></h1>
+            <p class="built-for reveal">Built for DJs, VJs, and Lighting Directors.</p>
+            <p class="description reveal">
+                Full-service technical production, certified equipment repair, and proprietary tools built for New York's leading nightlife and hospitality experts.
+            </p>
+            <div class="btn-group reveal">
+                <a href="./services/" class="btn btn-primary">View Services &rarr;</a>
+                <a href="#contact" class="btn btn-outline">Request a Quote</a>
+            </div>
+        </section>
+
+        <section class="pillars">
+            <a href="./services/" class="pillar-card reveal">
+                <h2 style="margin-bottom: 20px; font-family: 'Outfit';">Repair</h2>
+                <p style="color: var(--text-dim);">Component level DJ gear service.</p>
+            </a>
+            <a href="./services/" class="pillar-card reveal">
+                <h2 style="margin-bottom: 20px; font-family: 'Outfit';">Automation</h2>
+                <p style="color: var(--text-dim);">GrandMA3 & Resolume Logic.</p>
+            </a>
+            <a href="./projects/" class="pillar-card reveal">
+                <h2 style="margin-bottom: 20px; font-family: 'Outfit';">Innovation</h2>
+                <p style="color: var(--text-dim);">Proprietary VFX & Pro Audio tools.</p>
+            </a>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="reveal">
+                <span class="tagline">Get in Touch</span>
+                <h2 style="font-family: 'Outfit'; font-size: 3rem; font-weight: 900; margin-bottom: 20px;">Let's Build the <span class="cyan">Future.</span></h2>
+                <p style="color: var(--text-dim); margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto;">Whether it's a mission-critical repair or a next-generation visual project, we're ready to dive in.</p>
+                
+                <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="YOUR NAME" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
+                        </div>
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <textarea name="message" rows="5" placeholder="PROJECT DETAILS OR REPAIR REQUEST" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin: 40px auto 0; cursor: pointer; border: none;">Send Message &rarr;</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .contact-section { padding: 150px 40px; text-align: center; max-width: 900px; margin: 0 auto; }
+        .contact-form { margin-top: 60px; text-align: left; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 20px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            outline: none;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 191, 255, 0.05);
+        }
+        ::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 2px; font-size: 0.7rem; font-weight: 700; }
+    </style>
+
+    <footer>
+        &copy; 2026 Blacklist Tech // Manhattan HQ: NYC Pioneer Repair Specialist // The Operating System for the Night
+    </footer>
+
+    <script>
+        const words = ["Innovation.", "Automation.", "Precision.", "Mastery.", "Intelligence."];
+        let index = 0;
+        const rotateEl = document.getElementById('rotate-word');
+
+        setInterval(() => {
+            rotateEl.style.opacity = '0';
+            rotateEl.style.transform = 'translateY(10px)';
+            
+            setTimeout(() => {
+                index = (index + 1) % words.length;
+                rotateEl.textContent = words[index];
+                rotateEl.style.opacity = '1';
+                rotateEl.style.transform = 'translateY(0)';
+            }, 500);
+        }, 3000);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
+
