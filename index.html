@@ -121,16 +121,21 @@
         .light-4 { right: -10%; animation-duration: 16s; animation-delay: -1s; }
 
         /* --- Navigation --- */
-        nav {
+                nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 30px 60px;
+            padding: 25px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
         }
+
+        
 
         .logo {
             font-family: 'Outfit', sans-serif;
@@ -144,7 +149,7 @@
 
         .logo span { color: var(--accent-cyan); }
 
-        .nav-links { display: flex; gap: 30px; }
+        
         .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; transition: var(--transition-smooth); }
         .nav-links a:hover { color: var(--text-main); }
 
@@ -234,7 +239,27 @@
         .pillar-card:hover { border-color: var(--accent-cyan); transform: translateY(-10px); }
 
         footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); }
-    </style>
+    
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links { 
+            display: flex; 
+            gap: clamp(15px, 3vw, 40px); 
+            align-items: center;
+        }
+
     <link rel="icon" type="image/png" href="/assets/favicon.png">
 
     <link rel="canonical" href="https://www.blacklisttech.com/" />
@@ -331,7 +356,27 @@
             background: rgba(0, 191, 255, 0.05);
         }
         ::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 2px; font-size: 0.7rem; font-weight: 700; }
-    </style>
+    
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links { 
+            display: flex; 
+            gap: clamp(15px, 3vw, 40px); 
+            align-items: center;
+        }
+
 
     <footer>
         &copy; 2026 Blacklist Tech // Manhattan HQ: NYC Pioneer Repair Specialist // The Operating System for the Night

@@ -24,10 +24,24 @@
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
         body { background-color: var(--bg); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.6; }
         
-        nav { position: fixed; top: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+                nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        
         .logo { font-family: 'Outfit'; font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; color: white; text-decoration: none; }
         .logo span { color: var(--accent-cyan); }
-        .nav-links { display: flex; gap: 30px; }
+        
         .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
         .nav-links a:hover { color: var(--text-main); }
 
@@ -76,8 +90,30 @@
         .article-body p { margin-bottom: 24px; }
         .article-body code { font-family: 'JetBrains Mono'; color: var(--accent-cyan); background: rgba(0,191,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
         .article-body blockquote { border-left: 3px solid var(--accent-cyan); padding-left: 30px; margin: 40px 0; color: #888; font-style: italic; }
-    </style>
-</head>
+    
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links { 
+            display: flex; 
+            gap: clamp(15px, 3vw, 40px); 
+            align-items: center;
+        }
+
+
+    <style></style>
+
 <body>
     <nav>
         <a href="../" class="logo">BLACKLIST<span>.TECH</span></a>

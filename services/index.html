@@ -56,10 +56,24 @@
         .light-3 { right: 15%; animation-duration: 18s; animation-delay: -7s; opacity: 0.3; }
         .light-4 { right: -10%; animation-duration: 16s; animation-delay: -1s; }
 
-        nav { position: fixed; top: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+                nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        
         .logo { font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; color: white; text-decoration: none; }
         .logo span { color: var(--accent-cyan); }
-        .nav-links { display: flex; gap: 30px; }
+        
         .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
         .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
 
@@ -72,7 +86,7 @@
         .reveal { opacity: 0; transform: translateY(20px); transition: var(--transition-smooth); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 30px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 20px; }
         .card { background: var(--surface); border: 1px solid var(--border); border-radius: 40px; padding: 60px; transition: var(--transition-smooth); }
         .card:hover { border-color: var(--accent-cyan); background: rgba(255, 255, 255, 0.05); transform: translateY(-5px); }
         .card-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.02em; }
@@ -83,7 +97,27 @@
         .service-list li::before { content: '&rarr;'; color: var(--accent-cyan); font-weight: 800; }
 
         footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); margin-top: 100px; }
-    </style>
+    
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links { 
+            display: flex; 
+            gap: clamp(15px, 3vw, 40px); 
+            align-items: center;
+        }
+
     <link rel="icon" type="image/png" href="/assets/favicon.png">
 
     <link rel="canonical" href="https://www.blacklisttech.com/services/" />

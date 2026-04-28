@@ -96,10 +96,24 @@
         .light-3 { right: 15%; animation-duration: 18s; animation-delay: -7s; opacity: 0.3; }
         .light-4 { right: -10%; animation-duration: 16s; animation-delay: -1s; }
 
-        nav { position: fixed; top: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+                nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        
         .logo { font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; color: white; text-decoration: none; }
         .logo span { color: var(--accent-cyan); }
-        .nav-links { display: flex; gap: 30px; }
+        
         .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
         .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
 
@@ -179,7 +193,27 @@
             .dl-btn-go.ready:hover { box-shadow: 0 8px 30px rgba(0,191,255,0.4); transform: translateY(-2px); }
 
         footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); margin-top: 200px; }
-    </style>
+    
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links { 
+            display: flex; 
+            gap: clamp(15px, 3vw, 40px); 
+            align-items: center;
+        }
+
     <link rel="icon" type="image/png" href="/assets/favicon.png">
 
     <link rel="canonical" href="https://www.blacklisttech.com/projects/" />
@@ -385,7 +419,27 @@
             }
             .waitlist-form input:focus { border-color: var(--accent-cyan); box-shadow: 0 0 20px rgba(0,191,255,0.2); }
             .waitlist-form button { margin-top: 0; }
-        </style>
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links { 
+            display: flex; 
+            gap: clamp(15px, 3vw, 40px); 
+            align-items: center;
+        }
+
 
         <section class="flagship-banner reveal">
             <span class="flagship-badge">VFX Mastering Engine</span>
@@ -508,7 +562,27 @@
             padding: 40px; width: 90%; max-width: 500px; text-align: center;
             box-shadow: 0 20px 60px rgba(0,191,255,0.1);
         }
-    </style>
+    
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-links { 
+            display: flex; 
+            gap: clamp(15px, 3vw, 40px); 
+            align-items: center;
+        }
+
 
     <script>
         // A/B Slider Logic
