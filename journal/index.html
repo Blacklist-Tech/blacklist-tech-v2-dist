@@ -24,24 +24,10 @@
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
         body { background-color: var(--bg); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.6; }
         
-                nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 25px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        
+        nav { position: fixed; top: 0; width: 100%; padding: 25px 4%; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
         .logo { font-family: 'Outfit'; font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; color: white; text-decoration: none; }
         .logo span { color: var(--accent-cyan); }
-        
+        .nav-links { display: flex; gap: clamp(10px, 2vw, 30px); }
         .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
         .nav-links a:hover { color: var(--text-main); }
 
@@ -51,11 +37,7 @@
         h1 { font-family: 'Outfit'; font-size: 4rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 20px; }
 
         .journal-list { display: flex; flex-direction: column; gap: 60px; }
-        .post-card { 
-            text-decoration: none; color: inherit; display: block; 
-            border-bottom: 1px solid var(--border); padding-bottom: 60px; 
-            transition: var(--transition-smooth); cursor: pointer;
-        }
+        .post-card { text-decoration: none; color: inherit; display: block; border-bottom: 1px solid var(--border); padding-bottom: 60px; transition: var(--transition-smooth); }
         .post-card:hover { transform: translateX(10px); }
         .post-card:hover h2 { color: var(--accent-cyan); }
 
@@ -64,56 +46,8 @@
         .post-excerpt { color: var(--text-dim); font-size: 1.1rem; line-height: 1.7; }
 
         footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); margin-top: 100px; }
-
-        /* Article Overlay */
-        .article-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #000; z-index: 200;
-            display: none; overflow-y: auto;
-            padding: 120px 40px;
-        }
-        .article-overlay.active { display: block; animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-
-        .article-content { max-width: 800px; margin: 0 auto; }
-        .close-btn { 
-            position: fixed; top: 40px; right: 60px; 
-            font-family: 'JetBrains Mono'; color: var(--accent-cyan); 
-            cursor: pointer; font-size: 0.8rem; letter-spacing: 2px;
-            background: rgba(255,255,255,0.05); border: 1px solid var(--border);
-            padding: 10px 20px; border-radius: 100px; transition: 0.3s;
-        }
-        .close-btn:hover { background: white; color: black; }
-
-        .article-body { color: #ccc; font-size: 1.15rem; line-height: 1.8; margin-top: 40px; }
-        .article-body h3 { color: white; margin: 40px 0 20px; font-family: 'Outfit'; font-size: 1.8rem; }
-        .article-body p { margin-bottom: 24px; }
-        .article-body code { font-family: 'JetBrains Mono'; color: var(--accent-cyan); background: rgba(0,191,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
-        .article-body blockquote { border-left: 3px solid var(--accent-cyan); padding-left: 30px; margin: 40px 0; color: #888; font-style: italic; }
-    
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 25px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-links { 
-            display: flex; 
-            gap: clamp(15px, 3vw, 40px); 
-            align-items: center;
-        }
-
-
-    <style></style>
-
+    </style>
+</head>
 <body>
     <nav>
         <a href="../" class="logo">BLACKLIST<span>.TECH</span></a>
@@ -121,7 +55,6 @@
             <a href="../services/">Services</a>
             <a href="../projects/">Products</a>
             <a href="./" style="color: white;">Journal</a>
-            <a href="../about/">Experience</a>
             <a href="mailto:admin@blacklisttech.com">Contact</a>
         </div>
     </nav>
@@ -135,135 +68,30 @@
 
         <div class="journal-list">
             <!-- ENTRY 01 -->
-            <div class="post-card" onclick="openArticle('pioneer-psu')">
+            <a href="#" class="post-card">
                 <div class="post-meta">April 28, 2026 // Hardware Engineering</div>
                 <h2 class="post-title">Diagnosing CDJ-2000NXS2 Power Supply Sag.</h2>
                 <p class="post-excerpt">A deep dive into why high-end Pioneer hardware sometimes reboots under heavy bass load, and the component-level fix involving low-ESR capacitors.</p>
-            </div>
+            </a>
 
             <!-- ENTRY 02 -->
-            <div class="post-card" onclick="openArticle('psx-dsp')">
+            <a href="#" class="post-card">
                 <div class="post-meta">April 20, 2026 // Software Development</div>
                 <h2 class="post-title">Implementing the PSX SPU Topology in Rust.</h2>
                 <p class="post-excerpt">How we translated 1994 hardware register logic into a modern VST3 engine using the nih-plug framework and Vizia UI.</p>
-            </div>
+            </a>
 
             <!-- ENTRY 03 -->
-            <div class="post-card" onclick="openArticle('ma3-osc')">
+            <a href="#" class="post-card">
                 <div class="post-meta">April 12, 2026 // Lighting Control</div>
                 <h2 class="post-title">GrandMA3 OSC Bridges for Resolume.</h2>
                 <p class="post-excerpt">Optimizing network latency between lighting consoles and media servers using custom Python bridges and UDP protocol hardening.</p>
-            </div>
+            </a>
         </div>
 
         <footer>
             &copy; 2026 Blacklist Tech // Manhattan HQ // The Operating System for the Night
         </footer>
     </main>
-
-    <div class="article-overlay" id="article-overlay">
-        <div class="close-btn" id="close-article">ESC // CLOSE</div>
-        <div class="article-content" id="article-target">
-            <!-- Content Injected via JS -->
-        </div>
-    </div>
-
-    <script>
-        const journalData = {
-            "pioneer-psu": {
-                date: "April 28, 2026 // Hardware Engineering",
-                title: "Diagnosing CDJ-2000NXS2 Power Supply Sag.",
-                content: `
-                    <p>In the high-pressure environment of a Manhattan nightclub, equipment failure isn't just an inconvenience—it's a mission-critical shutdown. Recently, we've seen an uptick in Pioneer CDJ-2000NXS2 units rebooting unexpectedly during peak sets. After extensive bench testing at Blacklist HQ, we identified the culprit: <strong>Electrolytic Capacitor Degradation in the switching power supply.</strong></p>
-                    
-                    <h3>The Symptom</h3>
-                    <p>The unit reboots specifically when the venue's sub-bass transients hit. This initially looks like a loose IEC cable, but the internal logs show a VCC rail dip below 4.7V. The NXS2 internal logic triggers a brownout reset to protect the processor.</p>
-
-                    <blockquote>"Nightclub heat cycles are the silent killer of low-ESR capacitors. 10 hours a day at 40°C in a booth creates a predictable failure curve."</blockquote>
-
-                    <h3>The Technical Fix</h3>
-                    <p>The stock capacitors on the secondary stage of the PSU are rated for 2000 hours at 105°C. In high-density NYC booths, these reach their limit within 2-3 years. We replace these with <strong>high-temp, ultra-low ESR Panasonic FR series</strong> equivalents. We also increase the capacitance on the 5V logic rail by 20% to provide a larger buffer for voltage ripples.</p>
-                    
-                    <p>Since implementing this component-level hardening, the units have survived 100+ hour stress tests in vibrating environments without a single rail dip.</p>
-                `
-            },
-            "psx-dsp": {
-                date: "April 20, 2026 // Software Development",
-                title: "Implementing the PSX SPU Topology in Rust.",
-                content: `
-                    <p>Recreating the "classic" sound of 90s console reverb is usually done with simple impulse responses (IRs). For the <strong>Blacklist PSX Reverb</strong>, we wanted something deeper: a mathematical reconstruction of the actual 24nd-order comb and all-pass filter network used in the original hardware SPU.</p>
-
-                    <h3>The Logic Loop</h3>
-                    <p>The original hardware utilized a fixed-point arithmetic system with specific register-based delays. In Rust, we implemented this using a series of ring buffers and <code>f32</code> audio samples. The challenge was maintaining the specific "grain" of the original interpolation.</p>
-
-                    <code>// Example of the all-pass diffusion stage
-fn process_allpass(&mut self, input: f32) -> f32 {
-    let delayed = self.buffer[self.ptr];
-    let output = -self.gain * input + delayed;
-    self.buffer[self.ptr] = input + self.gain * delayed;
-    self.ptr = (self.ptr + 1) % self.size;
-    output
-}</code>
-
-                    <h3>Optimizing for VST3</h3>
-                    <p>Using the <code>nih-plug</code> framework allowed us to keep the binary size under 5MB while achieving sub-millisecond latency. The final product includes the 7 "Hardware Presets" which are literally just the register values extracted from BIOS dumps of the original console.</p>
-                `
-            },
-            "ma3-osc": {
-                date: "April 12, 2026 // Lighting Control",
-                title: "GrandMA3 OSC Bridges for Resolume.",
-                content: `
-                    <p>GrandMA3 is a powerhouse, but when it comes to triggering complex Resolume Arena clips via OSC, the native implementation can sometimes feel sluggish on high-density networks. We built a custom bridge to handle the heavy lifting.</p>
-
-                    <h3>Network Hardening</h3>
-                    <p>Standard UDP packets used in OSC are "fire and forget." In a stadium environment, packet loss is real. Our bridge, written in Python, acts as a telemetry probe. It listens for MA3 commands and echoes them to Resolume with a sub-5ms delay, utilizing a predictive buffer to handle jitter.</p>
-
-                    <blockquote>"In lighting, timing isn't everything—it's the only thing. If your visual doesn't hit on the downbeat, the immersion is broken."</blockquote>
-
-                    <h3>The Integration</h3>
-                    <p>Using the <code>python-osc</code> library, we created a translation layer that allows an LD to use simple fader movements on the console to control complex generative parameters in Resolume. This bypasses the need for massive DMX-to-OSC mapping tables and keeps the show file clean and maintainable.</p>
-                `
-            }
-        };
-
-        const overlay = document.getElementById('article-overlay');
-        const target = document.getElementById('article-target');
-        const closeBtn = document.getElementById('close-article');
-
-        function openArticle(id) {
-            const data = journalData[id];
-            if (!data) return;
-
-            target.innerHTML = `
-                <div class="post-meta">${data.date}</div>
-                <h1 style="font-family: 'Outfit'; font-size: 3.5rem; margin-bottom: 20px;">${data.title}</h1>
-                <div class="article-body">${data.content}</div>
-            `;
-            overlay.style.display = 'block'; // Ensure it's visible before adding class
-            setTimeout(() => {
-                overlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }, 10);
-        }
-
-        closeBtn.addEventListener('click', () => {
-            overlay.classList.remove('active');
-            setTimeout(() => {
-                overlay.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }, 600);
-        });
-
-        // Close on ESC
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                overlay.classList.remove('active');
-                setTimeout(() => {
-                    overlay.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }, 600);
-            }
-        });
-    </script>
 </body>
 </html>
