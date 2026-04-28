@@ -3,64 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blacklist Tech // NYC Pioneer DJ Repair & MA3 Programming</title>
-    <meta name="description" content="Certified Pioneer DJ repair and high-end GrandMA3 automation services in Manhattan. We fix the gear that fuels New York's nightlife.">
-    <meta name="keywords" content="Pioneer DJ Repair NYC, CDJ Repair Manhattan, GrandMA3 Programming NYC, Resolume Automation Brooklyn, DJ Equipment Service New York">
-    
-    <!-- Local Business Schema -->
-    <script type="application/ld+json">
-        {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Blacklist Tech",
-      "description": "NYC's premier technical production and certified Pioneer DJ equipment repair center.",
-      "url": "https://www.blacklisttech.com",
-      "telephone": "+1-555-BLACKLIST",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Manhattan",
-        "addressRegion": "NY",
-        "postalCode": "10001",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.7128",
-        "longitude": "-74.0060"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Technical Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Pioneer DJ Equipment Repair",
-              "description": "Component-level repair for CDJ, DJM, and XDJ series hardware."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "GrandMA3 Lighting Automation",
-              "description": "Professional lighting programming and logic automation for venue systems."
-            }
-          }
-        ]
-      }
-    },
-      "url": "https://www.blacklisttech.com",
-      "telephone": "+1-555-BLACKLIST",
-      "priceRange": "$$",
-      "image": "https://www.blacklisttech.com/logo.png"
-    }
-    </script>
+    <title>Blacklist Tech // New York City Engineering HQ</title>
+    <meta name="description" content="Certified Pioneer DJ repair, GrandMA3 automation, and proprietary VST engineering. The operating system for New York's nightlife.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="canonical" href="https://www.blacklisttech.com/" />
     
     <style>
         :root {
@@ -72,198 +22,55 @@
             --border: rgba(255, 255, 255, 0.1);
             --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.4;
-        }
-
-        /* --- MOVING STAGE LIGHTS --- */
-        .stage-lights {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .light-beam {
-            position: absolute;
-            top: -150px;
-            width: 800px;
-            height: 200vh;
-            background: linear-gradient(180deg, 
-                rgba(0, 191, 255, 0.4) 0%, 
-                rgba(0, 191, 255, 0.1) 40%, 
-                transparent 80%);
-            clip-path: polygon(45% 0%, 55% 0%, 100% 100%, 0% 100%);
-            filter: blur(50px);
-            transform-origin: top center;
-            opacity: 0.7;
-            animation: sweep 12s ease-in-out infinite alternate;
-        }
-
-        @keyframes sweep {
-            0% { transform: rotate(-5deg) translateX(-5%); }
-            100% { transform: rotate(5deg) translateX(5%); }
-        }
-
-        .light-1 { left: -10%; animation-duration: 15s; animation-delay: -2s; }
-        .light-2 { left: 15%; animation-duration: 20s; animation-delay: -5s; opacity: 0.3; }
-        .light-3 { right: 15%; animation-duration: 18s; animation-delay: -7s; opacity: 0.3; }
-        .light-4 { right: -10%; animation-duration: 16s; animation-delay: -1s; }
-
-        /* --- Navigation --- */
-                nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 25px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-
+        body { background-color: var(--bg); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.6; }
         
-
-        .logo {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 900;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: white;
-            text-decoration: none;
-        }
-
+        nav { position: fixed; top: 0; width: 100%; padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+        .logo { font-family: 'Outfit'; font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; color: white; text-decoration: none; }
         .logo span { color: var(--accent-cyan); }
-
-        
-        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; transition: var(--transition-smooth); }
+        .nav-links { display: flex; gap: clamp(15px, 3vw, 40px); align-items: center; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
         .nav-links a:hover { color: var(--text-main); }
 
-        main { position: relative; z-index: 10; }
+        .stage-lights { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; opacity: 0.4; }
+        .light-beam { position: absolute; top: -50%; width: 30vw; height: 200%; background: linear-gradient(to bottom, rgba(0, 191, 255, 0.05), transparent); transform: rotate(15deg); filter: blur(80px); animation: sweep 20s infinite alternate ease-in-out; }
+        .light-1 { left: -10%; animation-delay: 0s; }
+        .light-2 { left: 20%; animation-delay: -5s; }
+        .light-3 { left: 50%; animation-delay: -10s; }
+        .light-4 { left: 80%; animation-delay: -15s; }
+        @keyframes sweep { from { transform: rotate(10deg) translateX(-5%); } to { transform: rotate(20deg) translateX(5%); } }
 
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 40px;
-        }
+        main { position: relative; z-index: 2; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; max-width: 1400px; margin: 0 auto; }
+        .location-tag { color: var(--accent-cyan); font-size: 0.75rem; letter-spacing: 8px; font-weight: 800; margin-bottom: 30px; display: block; }
+        h1 { font-family: 'Outfit'; font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.05em; margin-bottom: 40px; }
+        h1 .cyan { color: var(--accent-cyan); text-shadow: 0 0 50px rgba(0, 191, 255, 0.3); }
 
-        .location-tag {
-            color: var(--accent-cyan);
-            font-size: 0.75rem;
-            letter-spacing: 10px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            font-weight: 800;
-        }
-
-        h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(3.5rem, 12vw, 8rem);
-            font-weight: 900;
-            line-height: 0.9;
-            margin-bottom: 30px;
-            letter-spacing: -0.06em;
-        }
-
-        h1 span.cyan { 
-            color: var(--accent-cyan); 
-            display: inline-block;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .built-for {
-            color: var(--text-main);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .description {
-            max-width: 750px;
-            color: var(--text-dim);
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 60px;
-        }
-
+        .built-for { color: var(--text-main); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 6px; margin-bottom: 30px; font-weight: 700; }
+        .description { max-width: 750px; color: var(--text-dim); font-size: 1.2rem; line-height: 1.6; margin-bottom: 60px; }
         .btn-group { display: flex; gap: 20px; }
-        .btn { padding: 18px 44px; border-radius: 100px; font-weight: 800; font-size: 0.9rem; text-decoration: none; transition: var(--transition-smooth); display: flex; align-items: center; gap: 10px; }
+        .btn { padding: 18px 44px; border-radius: 100px; font-weight: 800; font-size: 0.9rem; text-decoration: none; transition: var(--transition-smooth); display: flex; align-items: center; gap: 10px; border: none; cursor: pointer; }
         .btn-primary { background-color: var(--accent-cyan); color: #000; }
         .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 191, 255, 0.5); }
         .btn-outline { border: 1px solid rgba(255,255,255,0.2); color: #fff; background: rgba(0,0,0,0.3); }
         .btn-outline:hover { background: #fff; color: #000; }
 
-        .reveal { opacity: 0; transform: translateY(20px); transition: var(--transition-smooth); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        .pillars {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 40px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .pillar-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            padding: 60px 40px;
-            text-align: center;
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition-smooth);
-        }
-
+        .pillars { max-width: 1200px; margin: 0 auto; padding: 100px 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .pillar-card { background: var(--surface); border: 1px solid var(--border); border-radius: 30px; padding: 60px 40px; text-align: center; text-decoration: none; color: inherit; transition: var(--transition-smooth); }
         .pillar-card:hover { border-color: var(--accent-cyan); transform: translateY(-10px); }
 
+        .contact-section { padding: 150px 40px; text-align: center; max-width: 900px; margin: 0 auto; }
+        .contact-form { margin-top: 60px; text-align: left; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group input, .form-group textarea { width: 100%; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); padding: 20px; color: white; font-family: 'Inter', sans-serif; border-radius: 12px; font-size: 0.9rem; transition: var(--transition-smooth); outline: none; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-cyan); background: rgba(0, 191, 255, 0.05); }
+        ::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 2px; font-size: 0.7rem; font-weight: 700; }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: var(--transition-smooth); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
         footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); }
-    
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 25px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-links { 
-            display: flex; 
-            gap: clamp(15px, 3vw, 40px); 
-            align-items: center;
-        }
-
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
-
-    <link rel="canonical" href="https://www.blacklisttech.com/" />
-
+    </style>
+</head>
 <body>
     <div class="stage-lights">
         <div class="light-beam light-1"></div>
@@ -277,7 +84,8 @@
         <div class="nav-links">
             <a href="./services/">Services</a>
             <a href="./projects/">Products</a>
-            <a href="./journal/">Journal</a>            <a href="./about/">Experience</a>
+            <a href="./journal/">Journal</a>
+            <a href="./about/">Experience</a>
             <a href="mailto:admin@blacklisttech.com">Contact</a>
         </div>
     </nav>
@@ -335,49 +143,6 @@
         </section>
     </main>
 
-    <style>
-        .contact-section { padding: 150px 40px; text-align: center; max-width: 900px; margin: 0 auto; }
-        .contact-form { margin-top: 60px; text-align: left; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            padding: 20px;
-            color: white;
-            font-family: 'Inter', sans-serif;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            transition: var(--transition-smooth);
-            outline: none;
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            border-color: var(--accent-cyan);
-            background: rgba(0, 191, 255, 0.05);
-        }
-        ::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 2px; font-size: 0.7rem; font-weight: 700; }
-    
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 25px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-links { 
-            display: flex; 
-            gap: clamp(15px, 3vw, 40px); 
-            align-items: center;
-        }
-
-
     <footer>
         &copy; 2026 Blacklist Tech // Manhattan HQ: NYC Pioneer Repair Specialist // The Operating System for the Night
     </footer>
@@ -406,4 +171,3 @@
     </script>
 </body>
 </html>
-
