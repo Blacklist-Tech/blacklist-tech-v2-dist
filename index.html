@@ -9,47 +9,21 @@
     
     <!-- Local Business Schema -->
     <script type="application/ld+json">
-        {
+    {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Blacklist Tech",
-      "description": "NYC's premier technical production and certified Pioneer DJ equipment repair center.",
-      "url": "https://www.blacklisttech.com",
-      "telephone": "+1-555-BLACKLIST",
+      "description": "NYC's premier technical production and certified DJ equipment repair center.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Manhattan",
         "addressRegion": "NY",
-        "postalCode": "10001",
         "addressCountry": "US"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "40.7128",
-        "longitude": "-74.0060"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Technical Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Pioneer DJ Equipment Repair",
-              "description": "Component-level repair for CDJ, DJM, and XDJ series hardware."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "GrandMA3 Lighting Automation",
-              "description": "Professional lighting programming and logic automation for venue systems."
-            }
-          }
-        ]
-      }
+      "url": "https://www.blacklisttech.com",
+      "telephone": "+1-555-BLACKLIST",
+      "priceRange": "$$",
+      "image": "https://www.blacklisttech.com/logo.png"
     }
     </script>
     
@@ -139,7 +113,7 @@
 
         .logo span { color: var(--accent-cyan); }
 
-        .nav-links { display: flex; gap: clamp(10px, 2vw, 30px); }
+        .nav-links { display: flex; gap: 30px; }
         .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; transition: var(--transition-smooth); }
         .nav-links a:hover { color: var(--text-main); }
 
@@ -231,9 +205,7 @@
         footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); }
     </style>
     <link rel="icon" type="image/png" href="/assets/favicon.png">
-
-    <link rel="canonical" href="https://www.blacklisttech.com/" />
-
+</head>
 <body>
     <div class="stage-lights">
         <div class="light-beam light-1"></div>
@@ -247,7 +219,7 @@
         <div class="nav-links">
             <a href="./services/">Services</a>
             <a href="./projects/">Products</a>
-            <a href="./journal/">Journal</a>            <a href="./about/">Experience</a>
+            <a href="./about/">Experience</a>
             <a href="mailto:admin@blacklisttech.com">Contact</a>
         </div>
     </nav>
