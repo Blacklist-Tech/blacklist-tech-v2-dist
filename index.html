@@ -203,12 +203,21 @@
         .pillar-card:hover { border-color: var(--accent-cyan); transform: translateY(-10px); }
 
         footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 20px; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+            .hero { padding: 0 20px; }
+            .btn-group { flex-direction: column; width: 100%; gap: 15px; }
+            .btn { width: 100%; justify-content: center; padding: 15px 30px; }
+            .pillars { grid-template-columns: 1fr; padding: 60px 20px; }
+            .pillar-card { padding: 40px 20px; }
+            .light-beam { width: 400px; }
+            footer { padding: 40px 20px; }
+        }
     </style>
     <link rel="icon" type="image/png" href="/assets/favicon.png">
-    <script>
-        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
     <div class="stage-lights">
@@ -302,6 +311,11 @@
             background: rgba(0, 191, 255, 0.05);
         }
         ::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 2px; font-size: 0.7rem; font-weight: 700; }
+        @media (max-width: 768px) {
+            .contact-section { padding: 80px 20px; }
+            .contact-section h2 { font-size: 2rem !important; }
+            .form-grid { grid-template-columns: 1fr; }
+        }
     </style>
 
     <footer>
