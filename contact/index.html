@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact // Blacklist Tech — NYC Pioneer DJ Repair & Production</title>
+    <link rel="canonical" href="https://www.blacklisttech.com/contact/" />
+    <meta name="description" content="Reach Blacklist Tech: Pioneer DJ repair (same business day), production & MA3 programming, software access. Call/text 646.585.5997 or send a request.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Blacklist Tech">
+    <meta property="og:title" content="Contact // Blacklist Tech">
+    <meta property="og:description" content="Pioneer DJ repair, production, and software access. Call/text 646.585.5997 — repairs: same business day.">
+    <meta property="og:url" content="https://www.blacklisttech.com/contact/">
+    <meta property="og:image" content="https://www.blacklisttech.com/assets/flx4x_cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.blacklisttech.com/assets/flx4x_cover.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #000000;
+            --accent-cyan: #00bfff;
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+            --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.4;
+        }
+
+        h1, h2, h3, .logo, .tagline { font-family: 'Outfit', sans-serif; }
+
+        .stage-lights { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .light-beam {
+            position: absolute;
+            top: -150px;
+            width: 800px;
+            height: 200vh;
+            background: linear-gradient(180deg, rgba(0, 191, 255, 0.25) 0%, rgba(0, 191, 255, 0.05) 40%, transparent 80%);
+            clip-path: polygon(45% 0%, 55% 0%, 100% 100%, 0% 100%);
+            filter: blur(50px);
+            opacity: 0.6;
+        }
+        .light-1 { left: -10%; }
+        .light-4 { right: -10%; }
+
+        nav { position: fixed; top: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+        .logo { font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; color: white; text-decoration: none; }
+        .logo span { color: var(--accent-cyan); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+
+        .container { position: relative; z-index: 10; max-width: 1100px; margin: 0 auto; padding: 200px 40px 100px; }
+        header { margin-bottom: 80px; text-align: center; }
+        h1 { font-size: 4rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 20px; }
+        h1 span { color: var(--accent-cyan); }
+        .tagline { color: var(--accent-cyan); font-size: 0.7rem; letter-spacing: 6px; text-transform: uppercase; font-weight: 700; margin-bottom: 30px; display: block; }
+
+        .contact-lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
+        .lane { background: var(--surface); border: 1px solid var(--border); border-radius: 40px; padding: 60px 50px; text-align: center; }
+        .lane:hover { border-color: var(--accent-cyan); }
+        .lane .tagline { margin-bottom: 20px; }
+        .lane h2 { font-size: 2rem; font-weight: 900; margin-bottom: 15px; }
+        .lane p { color: var(--text-dim); font-size: 1rem; line-height: 1.6; margin-bottom: 30px; }
+        .lane .phone-link { display: inline-block; font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--accent-cyan); text-decoration: none; letter-spacing: 1px; }
+        .lane .phone-link:hover { text-shadow: 0 0 30px rgba(0,191,255,0.6); }
+        .lane .sub { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-dim); margin-top: 12px; }
+
+        .contact-form-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 40px; padding: 80px 60px; }
+        .contact-form-wrap h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 15px; text-align: center; }
+        .contact-form-wrap > p { color: var(--text-dim); text-align: center; max-width: 600px; margin: 0 auto 50px; line-height: 1.6; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 20px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            outline: none;
+        }
+        .form-group select { appearance: none; cursor: pointer; }
+        .form-group select option { background: #111; color: white; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--accent-cyan);
+            background: rgba(0, 191, 255, 0.05);
+        }
+        ::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 2px; font-size: 0.7rem; font-weight: 700; }
+
+        .btn { display: inline-flex; justify-content: center; align-items: center; padding: 18px 36px; border-radius: 100px; font-weight: 800; font-size: 0.85rem; text-decoration: none; transition: var(--transition-smooth); background: var(--accent-cyan); color: #000; margin-top: 40px; width: fit-content; border: none; cursor: pointer; }
+        .btn:hover { box-shadow: 0 0 30px rgba(0, 191, 255, 0.4); }
+
+        .sla-note { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-dim); margin-top: 30px; }
+        .sla-note span { color: var(--accent-cyan); }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: var(--transition-smooth); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); margin-top: 120px; }
+        footer a { color: var(--accent-cyan); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 20px; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .container { padding: 120px 20px 60px; }
+            h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+            .contact-lanes { grid-template-columns: 1fr; gap: 20px; }
+            .lane { padding: 40px 20px; }
+            .contact-form-wrap { padding: 40px 20px; border-radius: 20px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .btn { width: 100%; justify-content: center; }
+            footer { padding: 40px 20px; }
+        }
+    </style>
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="d14a1b84-88b9-4d7f-9c7e-8c8c9e43db7a"></script>
+</head>
+<body>
+    <div class="stage-lights">
+        <div class="light-beam light-1"></div>
+        <div class="light-beam light-4"></div>
+    </div>
+
+    <nav>
+        <a href="../" class="logo">BLACKLIST<span>.TECH</span></a>
+        <div class="nav-links">
+            <a href="../services/">Services</a>
+            <a href="../projects/">Products</a>
+            <a href="../about/">Experience</a>
+            <a href="./" class="active">Contact</a>
+            <a href="tel:+16465855997" style="color: var(--accent-cyan); font-weight: 800;">646.585.5997</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="reveal">
+            <span class="tagline">Get in Touch</span>
+            <h1>Talk to a <span>Technician.</span></h1>
+        </header>
+
+        <div class="contact-lanes">
+            <div class="lane reveal">
+                <span class="tagline">Repairs &amp; Show Emergencies</span>
+                <h2>Call or Text.</h2>
+                <p>Dead gear before a show? Text us. Repair requests are answered the same business day — show emergencies, immediately.</p>
+                <a href="tel:+16465855997" class="phone-link">646.585.5997</a>
+                <div class="sub">Repairs: same business day &middot; Emergencies: ASAP</div>
+            </div>
+            <div class="lane reveal">
+                <span class="tagline">Production, Software &amp; Press</span>
+                <h2>Email.</h2>
+                <p>Production quotes, MA3/Resolume programming, software access requests, and press inquiries.</p>
+                <a href="mailto:admin@blacklisttech.com" class="phone-link" style="font-size: 1.4rem;">admin@blacklisttech.com</a>
+                <div class="sub">Quotes within one business day</div>
+            </div>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+            <h2>Request a Quote.</h2>
+            <p>Tell us what you need. This opens a pre-filled email to our bench — include your gear model and symptom for the fastest diagnosis.</p>
+            <form id="quote-form">
+                <div class="form-grid">
+                    <div class="form-group"><input type="text" name="name" placeholder="YOUR NAME" required></div>
+                    <div class="form-group"><input type="text" name="contact" placeholder="PHONE OR EMAIL" required></div>
+                    <div class="form-group">
+                        <select name="service" required>
+                            <option value="" disabled selected>SELECT SERVICE</option>
+                            <option>Equipment Repair (Pioneer DJ / Denon / A&amp;H)</option>
+                            <option>GrandMA3 Automation / Lighting</option>
+                            <option>Visual Production / Resolume</option>
+                            <option>Custom Production / Event Crew</option>
+                            <option>Software Access (Cue Arena / Upscalr / Bridge DJ / MicTrak)</option>
+                            <option>Press / Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="urgency" required>
+                            <option value="" disabled selected>URGENCY</option>
+                            <option>Emergency — show tonight</option>
+                            <option>Rush — within 48 hours</option>
+                            <option>Standard — this week</option>
+                            <option>Planning ahead</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <textarea name="details" rows="5" placeholder="GEAR MODEL, SYMPTOM, OR PROJECT DETAILS" required></textarea>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" class="btn">Send Request &rarr;</button>
+                </div>
+            </form>
+            <p class="sla-note">Repairs: <span>same business day</span> &middot; Rush available &middot; Venue retainers: <span>priority SLA</span></p>
+        </div>
+
+        <footer>
+            &copy; 2026 Blacklist Tech // Manhattan HQ // <a href="tel:+16465855997">646.585.5997</a> // admin@blacklisttech.com // The Operating System for the Night
+        </footer>
+    </main>
+
+    <script>
+        // Compose a pre-filled mailto — works with zero backend, no form service needed.
+        document.getElementById('quote-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const f = e.target;
+            const subject = encodeURIComponent(`[${f.service.value}] ${f.urgency.value} — ${f.name.value}`);
+            const body = encodeURIComponent(
+                `Name: ${f.name.value}\n` +
+                `Contact: ${f.contact.value}\n` +
+                `Service: ${f.service.value}\n` +
+                `Urgency: ${f.urgency.value}\n\n` +
+                `Details:\n${f.details.value}\n`
+            );
+            window.location.href = `mailto:admin@blacklisttech.com?subject=${subject}&body=${body}`;
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
