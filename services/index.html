@@ -92,6 +92,10 @@
         .service-list { list-style: none; }
         .service-list li { padding: 16px 0; border-top: 1px solid var(--border); color: var(--text-main); font-size: 0.95rem; display: flex; align-items: center; gap: 12px; }
         .service-list li::before { content: '\2192'; color: var(--accent-cyan); font-weight: 800; }
+        .btn { display: inline-flex; justify-content: center; align-items: center; padding: 18px 36px; border-radius: 100px; font-weight: 800; font-size: 0.85rem; text-decoration: none; transition: var(--transition-smooth); background: var(--accent-cyan); color: #000; margin-top: 40px; width: fit-content; }
+        .btn:hover { box-shadow: 0 0 30px rgba(0, 191, 255, 0.4); transform: translateY(-2px); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: white; }
+        .btn-outline:hover { background: white; color: black; border-color: white; }
 
         footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); margin-top: 100px; }
 
