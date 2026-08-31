@@ -2,38 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.blacklisttech.com/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://www.blacklisttech.com/projects/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.blacklisttech.com/services/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.blacklisttech.com/about/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.blacklisttech.com/legal/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <priority>0.50</priority>
   </url>
   <url>
     <loc>https://www.blacklisttech.com/journal/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <priority>0.60</priority>
   </url>
 
-  <url>
-    <loc>https://www.blacklisttech.com/contact/</loc>
-    <lastmod>2026-08-30</lastmod>
-    <priority>0.80</priority>
-  </url>
-</urlset>
