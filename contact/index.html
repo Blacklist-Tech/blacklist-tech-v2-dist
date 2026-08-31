@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact // Blacklist Tech — NYC Pioneer DJ Repair & Production</title>
     <link rel="canonical" href="https://www.blacklisttech.com/contact/" />
-    <meta name="description" content="Reach Blacklist Tech: Pioneer DJ repair (same business day), production & MA3 programming, software access. Call/text 646.585.5997 or send a request.">
+    <meta name="description" content="Reach Blacklist Tech: Pioneer DJ repair (same business day), production & MA3 programming, software access. Send a request — quotes within one business day.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Blacklist Tech">
     <meta property="og:title" content="Contact // Blacklist Tech">
-    <meta property="og:description" content="Pioneer DJ repair, production, and software access. Call/text 646.585.5997 — repairs: same business day.">
+    <meta property="og:description" content="Pioneer DJ repair, production, and software access. Send a request — repairs: same business day.">
     <meta property="og:url" content="https://www.blacklisttech.com/contact/">
     <meta property="og:image" content="https://www.blacklisttech.com/assets/flx4x_cover.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -144,7 +144,6 @@
             <a href="../projects/">Products</a>
             <a href="../about/">Experience</a>
             <a href="./" class="active">Contact</a>
-            <a href="tel:+16465855997" style="color: var(--accent-cyan); font-weight: 800;">646.585.5997</a>
         </div>
     </nav>
 
@@ -157,10 +156,10 @@
         <div class="contact-lanes">
             <div class="lane reveal">
                 <span class="tagline">Repairs &amp; Show Emergencies</span>
-                <h2>Call or Text.</h2>
-                <p>Dead gear before a show? Text us. Repair requests are answered the same business day — show emergencies, immediately.</p>
-                <a href="tel:+16465855997" class="phone-link">646.585.5997</a>
-                <div class="sub">Repairs: same business day &middot; Emergencies: ASAP</div>
+                <h2>Fast Lane.</h2>
+                <p>Dead gear before a show? Mark your request as an emergency — repair requests are answered the same business day, show emergencies first.</p>
+                <a href="#quote" class="phone-link" style="text-decoration: none;">Request a Repair &rarr;</a>
+                <div class="sub">Repairs: same business day &middot; Emergencies: first in queue</div>
             </div>
             <div class="lane reveal">
                 <span class="tagline">Production, Software &amp; Press</span>
@@ -171,9 +170,9 @@
             </div>
         </div>
 
-        <div class="contact-form-wrap reveal">
+        <div class="contact-form-wrap reveal" id="quote">
             <h2>Request a Quote.</h2>
-            <p>Tell us what you need. This opens a pre-filled email to our bench — include your gear model and symptom for the fastest diagnosis.</p>
+            <p>Tell us what you need. Your request goes straight to the bench — include your gear model and symptom for the fastest diagnosis.</p>
             <form id="quote-form">
                 <div class="form-grid">
                     <div class="form-group"><input type="text" name="name" placeholder="YOUR NAME" required></div>
@@ -203,31 +202,67 @@
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <button type="submit" class="btn">Send Request &rarr;</button>
+                    <button type="submit" class="btn" id="quote-submit">Send Request &rarr;</button>
+                    <p id="quote-status" style="margin-top: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 1px; display: none;"></p>
                 </div>
             </form>
             <p class="sla-note">Repairs: <span>same business day</span> &middot; Rush available &middot; Venue retainers: <span>priority SLA</span></p>
         </div>
 
         <footer>
-            &copy; 2026 Blacklist Tech // Manhattan HQ // <a href="tel:+16465855997">646.585.5997</a> // admin@blacklisttech.com // The Operating System for the Night
+            &copy; 2026 Blacklist Tech // Manhattan HQ // admin@blacklisttech.com // The Operating System for the Night
         </footer>
     </main>
 
     <script>
-        // Compose a pre-filled mailto — works with zero backend, no form service needed.
-        document.getElementById('quote-form').addEventListener('submit', (e) => {
+        // Web3Forms email capture — no backend needed.
+        const WEB3FORMS_KEY = "5890ceaf-aead-4b9c-bfcc-c56ab87bd9fd";
+
+        document.getElementById('quote-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const f = e.target;
-            const subject = encodeURIComponent(`[${f.service.value}] ${f.urgency.value} — ${f.name.value}`);
-            const body = encodeURIComponent(
-                `Name: ${f.name.value}\n` +
-                `Contact: ${f.contact.value}\n` +
-                `Service: ${f.service.value}\n` +
-                `Urgency: ${f.urgency.value}\n\n` +
-                `Details:\n${f.details.value}\n`
-            );
-            window.location.href = `mailto:admin@blacklisttech.com?subject=${subject}&body=${body}`;
+            const btn = document.getElementById('quote-submit');
+            const status = document.getElementById('quote-status');
+            btn.disabled = true;
+            btn.textContent = "SENDING...";
+            status.style.display = "none";
+
+            const contact = f.contact.value.trim();
+            const payload = {
+                access_key: WEB3FORMS_KEY,
+                subject: `[${f.service.value}] ${f.urgency.value} — ${f.name.value}`,
+                from_name: "Blacklist Tech Site",
+                name: f.name.value,
+                replyto: contact.includes("@") ? contact : undefined,
+                contact: contact,
+                service: f.service.value,
+                urgency: f.urgency.value,
+                details: f.details.value
+            };
+
+            try {
+                const res = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    status.textContent = "> REQUEST RECEIVED. We'll get back to you within one business day.";
+                    status.style.color = "var(--accent-cyan)";
+                    status.style.display = "block";
+                    f.reset();
+                } else {
+                    throw new Error(data.message || "Submission failed");
+                }
+            } catch (err) {
+                status.textContent = "> TRANSMISSION FAILED. Email us directly: admin@blacklisttech.com";
+                status.style.color = "#ff5555";
+                status.style.display = "block";
+            } finally {
+                btn.disabled = false;
+                btn.textContent = "Send Request →";
+            }
         });
 
         const observer = new IntersectionObserver((entries) => {
