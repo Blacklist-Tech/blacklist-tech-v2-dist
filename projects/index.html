@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLX4-X MIDI/OSC Mapper, Artist Series VSTs & AI VFX // Blacklist Tech</title>
+    <title>Cue Arena, Upscalr, Bridge DJ & MicTrak // Blacklist Tech</title>
     <link rel="canonical" href="https://www.blacklisttech.com/projects/" />
-    <meta name="description" content="Professional-grade performance tools for DJs, VJs, and Lighting Directors. Featuring the FLX4-X MIDI-to-OSC bridge, Upscalr AI video mastering, and Artist Series boutique VSTs.">
-    <meta name="keywords" content="FLX4-X Mapper, MIDI to OSC, Pioneer DDJ-FLX4, Resolume OSC, GrandMA3 OSC, AI Video Upscaling, DJ Gear Repair NYC, Boutique VSTs">
+    <meta name="description" content="Show-site proven tools for VJs, DJs, and A1s: Cue Arena Resolume control surface, Upscalr AI video mastering, Bridge DJ Rekordbox-to-Serato conversion, and MicTrak live mic tracking.">
+    <meta name="keywords" content="Resolume control surface, VJ software, AI video upscaler, DXV3 converter, HAP-Q encoding, Rekordbox to Serato, DJ library converter, mic tracking software, show rundown app, broadcast production tool, live visuals software">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,16 +74,22 @@
         .card-title { font-size: 3rem; font-weight: 900; margin-bottom: 24px; letter-spacing: -0.02em; }
         .card-desc { color: var(--text-dim); line-height: 1.7; font-size: 1.15rem; margin-bottom: 40px; }
 
-        .vst-details { margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border); }
-        .vst-details h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; color: var(--accent-cyan); }
-        .vst-details p { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 20px; }
-        
-        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
-        .stat-item { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); padding: 20px 10px; border-radius: 20px; text-align: center; }
+        .product-tagline { font-size: 1.3rem; font-weight: 700; color: var(--text-main); line-height: 1.5; margin-bottom: 30px; }
+        .product-tagline em { color: var(--accent-cyan); font-style: normal; }
+
+        .feature-list { list-style: none; margin-bottom: 40px; color: var(--text-dim); display: grid; grid-template-columns: 1fr 1fr; gap: 15px 30px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+        .feature-list li { display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+        .feature-list li span.check { color: var(--accent-cyan); flex-shrink: 0; }
+
+        .audience { font-size: 0.95rem; color: var(--text-dim); line-height: 1.7; margin-bottom: 40px; padding: 20px 25px; background: rgba(255,255,255,0.02); border-left: 3px solid var(--accent-cyan); border-radius: 0 12px 12px 0; }
+        .audience strong { color: var(--text-main); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 8px; }
+
+        .stats { display: flex; gap: 20px; margin-top: 40px; }
         .stat-val { display: block; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.2rem; color: var(--accent-cyan); margin-bottom: 4px; }
         .stat-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim); font-weight: 700; }
 
         .btn { display: inline-flex; justify-content: center; align-items: center; padding: 18px 36px; border-radius: 100px; font-weight: 800; font-size: 0.85rem; text-decoration: none; transition: var(--transition-smooth); background: var(--accent-cyan); color: #000; margin-top: 40px; width: fit-content; }
+        .btn:hover { box-shadow: 0 0 30px rgba(0, 191, 255, 0.4); transform: translateY(-2px); }
         .btn-outline { background: transparent; border: 1px solid var(--border); color: white; margin-right: 15px; }
         .btn-outline:hover { background: white; color: black; border-color: white; }
 
@@ -92,6 +98,121 @@
 
         footer { padding: 80px 40px; text-align: center; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; border-top: 1px solid var(--border); margin-top: 200px; }
 
+        .authority-ribbon {
+            max-width: 700px; margin: 0 auto 40px auto;
+            padding: 15px 30px;
+            background: rgba(255,255,255,0.02);
+            border-left: 3px solid var(--accent-cyan);
+            border-radius: 0 12px 12px 0;
+            color: var(--text-dim);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;
+        }
+
+        .product-banner {
+            background: linear-gradient(180deg, rgba(0, 191, 255, 0.05) 0%, rgba(0,0,0,0) 100%);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 40px;
+            padding: 100px 80px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 80px rgba(0, 191, 255, 0.1);
+        }
+        .product-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+        }
+        .banner-badge {
+            background: var(--accent-cyan);
+            color: black;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            padding: 12px 24px;
+            border-radius: 100px;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        .banner-title { font-size: 5rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 24px; line-height: 1.1; }
+        .banner-tagline { font-size: 1.6rem; font-weight: 700; color: var(--text-main); max-width: 900px; line-height: 1.5; margin-bottom: 40px; }
+        .banner-tagline em { color: var(--accent-cyan); font-style: normal; }
+        .banner-desc { font-size: 1.25rem; color: var(--text-dim); max-width: 800px; line-height: 1.6; margin-bottom: 60px; }
+
+        /* A/B Demo Block */
+        .ab-demo-container {
+            position: relative; width: 100%; height: 300px; margin-bottom: 60px;
+            border-radius: 20px; overflow: hidden; border: 1px solid var(--border);
+            background: #111; user-select: none;
+        }
+        .ab-img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Outfit', sans-serif; font-size: 3rem; font-weight: 900; letter-spacing: -1px;
+        }
+        .ab-before { background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 10px, #111 10px, #111 20px); color: rgba(255,255,255,0.1); }
+        .ab-after {
+            background: radial-gradient(circle at center, rgba(0,191,255,0.2) 0%, #000 100%);
+            color: var(--accent-cyan); text-shadow: 0 0 40px var(--accent-cyan);
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        }
+        .ab-slider-line {
+            position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: white;
+            box-shadow: 0 0 10px white; transform: translateX(-50%); pointer-events: none;
+        }
+        .ab-slider-handle {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 40px; height: 40px; background: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: black; font-weight: 900;
+            box-shadow: 0 0 20px rgba(255,255,255,0.5); pointer-events: none;
+        }
+        .ab-overlay-input {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize;
+        }
+
+        .feature-matrix { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 60px; }
+        .feature-matrix h3 { font-size: 1.4rem; color: white; margin-bottom: 15px; }
+        .feature-matrix p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.6; }
+
+        .roadmap-strip {
+            border: 1px dashed var(--border);
+            border-radius: 40px;
+            padding: 60px 80px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .roadmap-strip .banner-badge { margin-bottom: 20px; }
+        .roadmap-strip h2 { font-size: 2.5rem; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .roadmap-strip p { color: var(--text-dim); font-size: 1.15rem; max-width: 700px; margin: 0 auto; line-height: 1.6; }
+
+        #scroll-word { transition: all 0.5s ease; }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; padding: 20px; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .container { padding: 120px 20px 60px; }
+            h1.card-title { font-size: clamp(2.5rem, 10vw, 3.5rem) !important; }
+            .products-grid { grid-template-columns: 1fr; gap: 20px; }
+            .card { padding: 40px 20px; }
+            .product-banner { padding: 40px 20px; margin-bottom: 20px; border-radius: 20px; }
+            .banner-title { font-size: clamp(2.5rem, 12vw, 3.5rem); letter-spacing: -0.02em; }
+            .banner-tagline { font-size: 1.2rem; }
+            .banner-desc { font-size: 1.1rem; margin-bottom: 40px; }
+            .feature-list { grid-template-columns: 1fr; }
+            .feature-matrix { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
+            .roadmap-strip { padding: 40px 20px; }
+            .stats { flex-direction: row; gap: 10px; width: 100%; justify-content: space-between; }
+            .btn { width: 100%; justify-content: center; margin-right: 0; margin-bottom: 10px; box-sizing: border-box; }
+            .light-beam { width: 400px; }
+            footer { padding: 40px 20px; margin-top: 80px; }
+            .authority-ribbon { padding: 15px; font-size: 0.7rem; }
+            .ab-demo-container { height: 200px; margin-bottom: 40px; }
+            .ab-img { font-size: 1.5rem; }
+        }
     </style>
     <link rel="icon" type="image/png" href="/assets/favicon.png">
 </head>
@@ -122,19 +243,19 @@
                 <span id="scroll-word" style="color: white; min-width: 200px; display: inline-block; text-align: left; padding-left: 10px;">technicians.</span>
             </p>
             <div class="authority-ribbon">
-                Proprietary tools forged by touring technicians in the New York underground and on global stadium stages.
+                Built by touring technicians in New York. Every product here earned its place on a show site, not in a demo.
             </div>
         </header>
 
     <script>
         const roles = [
             "technicians.",
-            "Lighting Directors.",
-            "Audio Engineers.",
-            "DJs.",
             "VJs.",
-            "Artists.",
-            "Bands."
+            "DJs.",
+            "A1s.",
+            "Lighting Directors.",
+            "Stage Managers.",
+            "Artists."
         ];
         let roleIndex = 0;
         const scrollWord = document.getElementById('scroll-word');
@@ -160,101 +281,35 @@
         }, 3000);
     </script>
 
-        <style>
-            #scroll-word { transition: all 0.5s ease; }
+        <!-- CUE ARENA -->
+        <section class="product-banner reveal">
+            <span class="banner-badge">Resolume Control Surface</span>
+            <h2 class="banner-title">Cue Arena</h2>
+            <p class="banner-tagline">Your composition, <em>finally under control.</em></p>
+            <p class="banner-desc">The command center for Resolume that actually fits the way you run a show. Cue Arena reads your live composition — every clip, every layer, every deck — and gives it to you as a fast, searchable, taggable control surface: a clip browser with instant search, cuelists, a cue queue, and one-click firing. No digging through Resolume's own UI.</p>
             
-            .authority-ribbon {
-                max-width: 700px; margin: 0 auto 40px auto;
-                padding: 15px 30px;
-                background: rgba(255,255,255,0.02);
-                border-left: 3px solid var(--accent-cyan);
-                border-radius: 0 12px 12px 0;
-                color: var(--text-dim);
-                font-family: 'JetBrains Mono', monospace;
-                font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;
-            }
+            <ul class="feature-list">
+                <li><span class="check">&#10003;</span> Live composition mirror — clips, layers, and deck state in real time over WebSocket/OSC, with thumbnails generated on the fly</li>
+                <li><span class="check">&#10003;</span> Fire modes — single fire, cycling, hold, flash. One unified mapping works from keyboard, MIDI, and OSC alike</li>
+                <li><span class="check">&#10003;</span> Folder tagging — auto-tags your visual folders and makes them searchable, so finding "that one loop" takes seconds</li>
+                <li><span class="check">&#10003;</span> Dual NDI monitoring — preview NDI sources and your composition output right inside the app</li>
+                <li><span class="check">&#10003;</span> A real desktop app — native Tauri/Rust build, machine-fingerprint licensing, auto-updates, hardened installer</li>
+            </ul>
 
-            .flagship-banner {
-                background: linear-gradient(180deg, rgba(0, 191, 255, 0.05) 0%, rgba(0,0,0,0) 100%);
-                border: 1px solid var(--accent-cyan);
-                border-radius: 40px;
-                padding: 100px 80px;
-                margin-bottom: 80px;
-                position: relative;
-                overflow: hidden;
-                box-shadow: 0 0 80px rgba(0, 191, 255, 0.1);
-            }
-            .flagship-banner::before {
-                content: '';
-                position: absolute;
-                top: 0; left: 0; right: 0; height: 1px;
-                background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
-            }
-            .flagship-badge {
-                background: var(--accent-cyan);
-                color: black;
-                font-family: 'JetBrains Mono', monospace;
-                font-weight: 800;
-                font-size: 0.8rem;
-                letter-spacing: 4px;
-                text-transform: uppercase;
-                padding: 12px 24px;
-                border-radius: 100px;
-                display: inline-block;
-                margin-bottom: 30px;
-            }
-            .flagship-title { font-size: 5.5rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 30px; line-height: 1.1; }
-            .flagship-desc { font-size: 1.5rem; color: var(--text-dim); max-width: 800px; line-height: 1.6; margin-bottom: 60px; }
-            
-            /* A/B Demo Block */
-            .ab-demo-container {
-                position: relative; width: 100%; height: 300px; margin-bottom: 60px;
-                border-radius: 20px; overflow: hidden; border: 1px solid var(--border);
-                background: #111; user-select: none;
-            }
-            .ab-img {
-                position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-                display: flex; align-items: center; justify-content: center;
-                font-family: 'Outfit', sans-serif; font-size: 3rem; font-weight: 900; letter-spacing: -1px;
-            }
-            .ab-before { background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 10px, #111 10px, #111 20px); color: rgba(255,255,255,0.1); }
-            .ab-after {
-                background: radial-gradient(circle at center, rgba(0,191,255,0.2) 0%, #000 100%);
-                color: var(--accent-cyan); text-shadow: 0 0 40px var(--accent-cyan);
-                clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-            }
-            .ab-slider-line {
-                position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: white;
-                box-shadow: 0 0 10px white; transform: translateX(-50%); pointer-events: none;
-            }
-            .ab-slider-handle {
-                position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                width: 40px; height: 40px; background: white; border-radius: 50%;
-                display: flex; align-items: center; justify-content: center; color: black; font-weight: 900;
-                box-shadow: 0 0 20px rgba(255,255,255,0.5); pointer-events: none;
-            }
-            .ab-overlay-input {
-                position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize;
-            }
+            <div class="audience">
+                <strong>Who it's for</strong>
+                VJs and visual operators running Resolume who got tired of two tiny screens, mystery shortcuts, and hunting for clips while 3,000 people watch the wall.
+            </div>
 
-            .feature-matrix { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 60px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 60px; }
-            .feature-matrix h3 { font-size: 1.4rem; color: white; margin-bottom: 15px; }
-            .feature-matrix p { color: var(--text-dim); font-size: 1.1rem; line-height: 1.6; }
-            
-            /* Netlify Waitlist Form */
-            .waitlist-form { display: flex; gap: 15px; width: 100%; max-width: 600px; margin-top: 20px;}
-            .waitlist-form input {
-                flex: 1; padding: 20px 30px; border-radius: 100px; border: 1px solid var(--border);
-                background: rgba(0,0,0,0.5); color: white; font-family: 'Inter', sans-serif; font-size: 1rem; outline: none; transition: 0.3s;
-            }
-            .waitlist-form input:focus { border-color: var(--accent-cyan); box-shadow: 0 0 20px rgba(0,191,255,0.2); }
-            .waitlist-form button { margin-top: 0; }
-        </style>
+            <a href="mailto:admin@blacklisttech.com?subject=Cue%20Arena%20%E2%80%94%20Request%20Access" class="btn">REQUEST ACCESS &rarr;</a>
+        </section>
 
-        <section class="flagship-banner reveal">
-            <span class="flagship-badge">VFX Mastering Engine</span>
-            <h2 class="flagship-title">Upscalr v4.0 <span style="color: var(--accent-cyan);">PRO</span></h2>
-            <p class="flagship-desc">The industry-standard AI video mastering pipeline, reimagined. We completely rebuilt the rendering engine in native Rust to give VJs, stage directors, and content creators a flawless, zero-latency asset pipeline. This is the new standard for massive stadium visuals.</p>
+        <!-- UPSCALR -->
+        <section class="product-banner reveal">
+            <span class="banner-badge">AI Video Mastering</span>
+            <h2 class="banner-title">Upscalr</h2>
+            <p class="banner-tagline">1080p in. <em>Stadium-ready out.</em></p>
+            <p class="banner-desc">AI video mastering for LED walls — 4-hour render jobs in 30 seconds. Upscalr takes your source visuals — HD rips, old loops, anything — and neural-upscales them into crisp, stage-ready masters encoded in the codecs media servers actually want.</p>
             
             <div class="ab-demo-container">
                 <div class="ab-img ab-before">1080p SOURCE</div>
@@ -266,133 +321,97 @@
 
             <div class="feature-matrix">
                 <div>
-                    <h3>Native Media Server Codecs</h3>
-                    <p>Stop rendering twice. Upscalr PRO natively encodes straight into <strong>Resolume DXV3</strong> and <strong>HAP-Q</strong>. Your massive 4K visual loops will load instantly and decode natively on the GPU during live performances, entirely eliminating dropped frames.</p>
+                    <h3>Native DXV3 &amp; HAP-Q Output</h3>
+                    <p>Renders straight into Resolume's codecs. No second pass through Alley. No ProRes files that choke playback.</p>
                 </div>
                 <div>
-                    <h3>Seamless Xfade Looping</h3>
-                    <p>Built exclusively for VJs. Upscalr mathematically blends the first and last 60 frames of your output video to create a flawless, infinitely repeating loop out of literally any source material you throw at it.</p>
+                    <h3>Seamless 60-Frame Loops</h3>
+                    <p>Mathematically blends the head and tail of any clip into a perfect infinite loop. No manual trim-and-pray.</p>
                 </div>
                 <div>
-                    <h3>Audio Stripping & Telemetry</h3>
-                    <p>Automatically strips embedded audio tracks to save critical CPU cycles and prevent FOH audio bleeds. Plus, the proprietary neural sidecar architecture ensures Apple-grade UI stability while FFmpeg absolutely redlines your GPU.</p>
+                    <h3>Auto Audio Stripping</h3>
+                    <p>Removes embedded audio so nothing bleeds at FOH and nothing steals CPU.</p>
                 </div>
             </div>
 
-            <div class="waitlist-container" style="margin-top: 60px; display: flex; align-items: center; gap: 40px;">
-                <form name="upscalr-waitlist" method="POST" data-netlify="true" class="waitlist-form">
-                    <input type="email" name="email" placeholder="Enter your email for the V4.0 Beta..." required>
-                    <button type="submit" class="btn" style="margin-top: 0;">REQUEST EARLY ACCESS</button>
-                </form>
-                <div class="stats" style="margin-top: 0; display: flex; gap: 40px; margin-left: auto;">
-                    <div><span class="stat-val" style="font-size: 1.5rem;">0.4s</span><span class="stat-label">Startup</span></div>
-                    <div><span class="stat-val" style="font-size: 1.5rem;">4x</span><span class="stat-label">RAM Eff.</span></div>
-                    <div><span class="stat-val" style="font-size: 1.5rem;">11MB</span><span class="stat-label">Binary</span></div>
+            <div class="audience" style="margin-top: 60px;">
+                <strong>Who it's for</strong>
+                VJs and content creators who need a 1080p source to look native on a 4K wall, tonight.
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+                <a href="mailto:admin@blacklisttech.com?subject=Upscalr%20%E2%80%94%20Request%20Access" class="btn" style="margin-top: 0;">REQUEST ACCESS &rarr;</a>
+                <div class="stats" style="margin-top: 0; margin-left: auto;">
+                    <div><span class="stat-val">0.4s</span><span class="stat-label">Startup</span></div>
+                    <div><span class="stat-val">11MB</span><span class="stat-label">Binary</span></div>
+                    <div><span class="stat-val">4h&rarr;30s</span><span class="stat-label">Render</span></div>
                 </div>
             </div>
         </section>
 
         <div class="products-grid">
-            <!-- FLX4-X OSC MAPPER -->
-            <div class="card reveal flagship-card" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; padding: 80px; align-items: center; background: linear-gradient(135deg, rgba(0, 191, 255, 0.05) 0%, rgba(0,0,0,1) 100%); border: 1px solid var(--accent-cyan); border-radius: 40px; margin-bottom: 40px;">
-                <div class="product-info">
-                    <img src="../assets/flx4x_logo.png" alt="FLX4-X Logo" style="width: 80px; margin-bottom: 30px; filter: drop-shadow(0 0 10px var(--accent-cyan));">
-                    <span class="product-type">Performance Hardware Logic</span>
-                    <h2 class="card-title" style="font-size: 4rem;">FLX4-X Mapper</h2>
-                    <p class="card-desc" style="font-size: 1.3rem; line-height: 1.8;">The professional MIDI-to-OSC bridge for the Pioneer DDJ-FLX4. Transform your controller into a high-performance visual trigger station for Resolume and GrandMA3 without sacrificing native DJ software control.</p>
+            <!-- BRIDGE DJ -->
+            <div class="card reveal">
+                <div>
+                    <span class="product-type">DJ Library Conversion</span>
+                    <h2 class="card-title">Bridge DJ</h2>
+                    <p class="product-tagline">Prepped in Rekordbox. <em>Live in Serato.</em></p>
+                    <p class="card-desc">Plug a Rekordbox-exported USB drive into your Serato machine and BridgeDJ does the rest — converting playlists into Serato crates automatically. No rebuilding playlists, no re-setting cues, no restart.</p>
                     
-                    <ul style="list-style: none; margin-bottom: 40px; color: var(--text-dim); display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-family: 'JetBrains Mono'; font-size: 0.9rem;">
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--accent-cyan);">✓</span> Native Resolume Integration</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--accent-cyan);">✓</span> GrandMA3 OSC Logic</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--accent-cyan);">✓</span> Shared-MIDI Passthrough</li>
-                        <li style="display: flex; align-items: center; gap: 10px;"><span style="color: var(--accent-cyan);">✓</span> Studio-Grade Stability</li>
+                    <ul class="feature-list" style="grid-template-columns: 1fr;">
+                        <li><span class="check">&#10003;</span> Auto-detect — scans every drive for a Rekordbox USB (modern or legacy database) the moment it's inserted</li>
+                        <li><span class="check">&#10003;</span> Full-fidelity conversion — tracks, playlists, hot cues, memory cues, loops, and beatgrids. Everything.</li>
+                        <li><span class="check">&#10003;</span> Serato-native output — proper .crate files and Serato Markers2 tags embedded into MP3/M4A/AIFF</li>
+                        <li><span class="check">&#10003;</span> Instant library sync — crates appear in the Files panel immediately. No restart.</li>
+                        <li><span class="check">&#10003;</span> Works alongside CDJ playback — one-shot, background daemon, GUI, or system-tray mode. The Rekordbox database is never modified.</li>
                     </ul>
 
-                    <a href="https://blacklisttech.gumroad.com/l/FLX4X" target="_blank" class="btn" style="padding: 24px 60px; font-size: 1.1rem; margin-top: 0;">Purchase License &rarr;</a>
-                </div>
-                <div class="product-visual">
-                    <div style="position: relative;">
-                        <img src="../assets/flx4_hardware.webp" alt="DDJ-FLX4 Hardware" style="width: 100%; border-radius: 20px; box-shadow: 0 0 60px rgba(0, 191, 255, 0.2);">
-                        <div style="position: absolute; top: -20px; right: -20px; background: var(--accent-cyan); color: black; padding: 10px 20px; border-radius: 10px; font-weight: 900; font-family: 'Outfit'; transform: rotate(10deg); box-shadow: 0 10px 30px rgba(0, 191, 255, 0.4);">NEW RELEASE</div>
+                    <div class="audience">
+                        <strong>Who it's for</strong>
+                        Working DJs who prepped in Rekordbox but the booth runs Serato — and vice versa. Stop re-prepping crates at 10 PM for an 11 PM set.
                     </div>
+
+                    <a href="mailto:admin@blacklisttech.com?subject=Bridge%20DJ%20%E2%80%94%20Request%20Access" class="btn">REQUEST ACCESS &rarr;</a>
                 </div>
             </div>
 
-            <!-- PIONEER REF -->
+            <!-- MICTRAK -->
             <div class="card reveal">
                 <div>
-                    <span class="product-type">Technical Intelligence</span>
-                    <h2 class="card-title">Pioneer Ref</h2>
-                    <p class="card-desc">The "Technician's Bible." A comprehensive, real-time database of Pioneer DJ part numbers, schematics, and regional variants. Used by service centers globally to maintain venue standards.</p>
-                </div>
-                <a href="https://pioneer-parts-reference.netlify.app/" target="_blank" class="btn">Launch Platform &rarr;</a>
-            </div>
+                    <span class="product-type">Live Mic Tracking</span>
+                    <h2 class="card-title">MicTrak</h2>
+                    <p class="product-tagline">Every speaker. Every transmitter. <em>Everyone's on the same board.</em></p>
+                    <p class="card-desc">The mic rundown that runs itself. MicTrak turns your rundown spreadsheet into a live, shared board: every session, every speaker, every transmitter, tracked in real time from any device on the network.</p>
+                    
+                    <ul class="feature-list" style="grid-template-columns: 1fr;">
+                        <li><span class="check">&#10003;</span> Imports your rundown — paste or upload CSV/TSV/JSON; speakers, mic types, times, rooms, and notes parsed automatically</li>
+                        <li><span class="check">&#10003;</span> Live mic board — every speaker tracked with mic type (handheld, lav, headset, boundary, podium) and TX number through queued &rarr; staged &rarr; live &rarr; done</li>
+                        <li><span class="check">&#10003;</span> Real-time crew sync — A1 at the desk, stage tech on a tablet, producer on their phone. Scan the QR code and everyone sees the same board instantly.</li>
+                        <li><span class="check">&#10003;</span> Runs on your own hardware — tiny local server, no cloud, no show-night internet required. State persists across crashes.</li>
+                        <li><span class="check">&#10003;</span> Event log — a rolling log of everything that happened, so post-show notes write themselves.</li>
+                    </ul>
 
-            <!-- BOUTIQUE VSTs -->
-            <div class="card reveal">
-                <div>
-                    <span class="product-type">Boutique Audio DSP</span>
-                    <h2 class="card-title">Artist Series VSTs</h2>
-                    <p class="card-desc">High-performance audio plugins built to replicate the soul of legendary analog chains with the precision of modern spectral engineering.</p>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: 1fr; gap: 40px;" class="vst-details">
-                    <div>
-                        <h3>Haunted Delay</h3>
-                        <p><strong>Replicates:</strong> The "Infinite Ghost" spectral echoes of rare boutique delay units. It recreates the unstable, haunting feedback loops used in elite sound design, providing a signature depth that standard digital delays can't touch.</p>
-                        <button class="btn btn-outline trigger-modal" data-vst="Haunted Delay Artist Edition" data-link="./downloads/Haunted_Delay_Artist_Edition.zip">Request Artist Edition</button>
+                    <div class="audience">
+                        <strong>Who it's for</strong>
+                        A1s, stage managers, and production crews on multi-speaker shows drowning in printed rundowns, missed TX swaps, and "wait, is that mic 14 or 40?"
                     </div>
-                    <div>
-                        <h3>Micro Aggressor</h3>
-                        <p><strong>Replicates:</strong> Aggressive, high-gain clipping and saturation stages. It recreates the "Redline Heat" of overdriven analog consoles, allowing rappers, guitarists, and producers to add professional-grade harmonic grit without losing transient clarity.</p>
-                        <button class="btn btn-outline trigger-modal" data-vst="Micro Aggressor Artist Edition" data-link="./downloads/Micro_Aggressor_Artist_Edition_v1.zip">Request Artist Edition</button>
-                    </div>
+
+                    <a href="mailto:admin@blacklisttech.com?subject=MicTrak%20%E2%80%94%20Request%20Access" class="btn">REQUEST ACCESS &rarr;</a>
                 </div>
             </div>
         </div>
+
+        <!-- ROADMAP -->
+        <section class="roadmap-strip reveal">
+            <span class="banner-badge">On The Roadmap</span>
+            <h2>CueMapper</h2>
+            <p>A Resolume Advanced Output companion for building linked, perfectly-scaled video outputs — stunning on any wall shape. <strong style="color: var(--text-main);">Coming soon.</strong></p>
+        </section>
 
         <footer>
             &copy; 2026 Blacklist Tech // Manhattan HQ: NYC Pioneer Repair Specialist // The Operating System for the Night
         </footer>
     </main>
-
-    <!-- Prestige Download Modal -->
-    <div class="vst-modal-overlay" id="vst-modal">
-        <form name="vst-downloads" method="POST" data-netlify="true" class="vst-modal-content" id="vst-form">
-            <input type="hidden" name="form-name" value="vst-downloads">
-            <input type="hidden" name="vst-name" id="modal-hidden-vst" value="">
-            
-            <h2 id="modal-vst-name" style="font-family: 'Outfit'; font-size: 2rem; margin-bottom: 10px;">Artist Edition</h2>
-            <p style="color: var(--text-dim); margin-bottom: 30px; font-size: 0.9rem;">You are requesting a proprietary Blacklist Tech VST.</p>
-            <div style="background: rgba(0,0,0,0.5); padding: 20px; border-radius: 12px; border: 1px solid var(--border); font-family: 'JetBrains Mono'; font-size: 0.8rem; color: #aaa; margin-bottom: 20px; text-align: left;">
-                > BLACKLIST TECHNICAL STANDARD<br>
-                > DO NOT DISTRIBUTE BEYOND YOUR TEAM.<br>
-                > ENSURE 48KHZ SAMPLE RATE.<br>
-                > AUTHORIZATION LOGGED.
-            </div>
-            
-            <input type="email" name="email" placeholder="Enter your professional email..." required style="width: 100%; padding: 15px 20px; border-radius: 12px; border: 1px solid var(--border); background: rgba(0,0,0,0.8); color: white; font-family: 'Inter', sans-serif; font-size: 1rem; margin-bottom: 30px; outline: none; transition: 0.3s;" onfocus="this.style.borderColor='var(--accent-cyan)'" onblur="this.style.borderColor='var(--border)'">
-            
-            <div style="display: flex; gap: 15px;">
-                <button type="button" class="btn btn-outline" id="modal-cancel" style="width: 50%;">CANCEL</button>
-                <button type="submit" id="modal-download-btn" class="btn" style="width: 50%; margin-top: 0; text-align: center;">I AGREE, DOWNLOAD</button>
-            </div>
-        </form>
-    </div>
-
-    <style>
-        .vst-modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8); backdrop-filter: blur(20px);
-            display: none; justify-content: center; align-items: center; z-index: 1000;
-        }
-        .vst-modal-overlay.active { display: flex; }
-        .vst-modal-content {
-            background: var(--bg); border: 1px solid var(--border); border-radius: 24px;
-            padding: 40px; width: 90%; max-width: 500px; text-align: center;
-            box-shadow: 0 20px 60px rgba(0,191,255,0.1);
-        }
-    </style>
 
     <script>
         // A/B Slider Logic
@@ -408,98 +427,10 @@
             abHandle.style.left = `${val}%`;
         });
 
-        // Prestige Download Modal Logic
-        const modal = document.getElementById('vst-modal');
-        const modalTitle = document.getElementById('modal-vst-name');
-        const vstForm = document.getElementById('vst-form');
-        const hiddenVst = document.getElementById('modal-hidden-vst');
-        const triggers = document.querySelectorAll('.trigger-modal');
-        let currentDownloadLink = "";
-        
-        triggers.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const vstName = btn.getAttribute('data-vst');
-                modalTitle.textContent = vstName;
-                hiddenVst.value = vstName;
-                currentDownloadLink = btn.getAttribute('data-link');
-                modal.classList.add('active');
-            });
-        });
-
-        document.getElementById('modal-cancel').addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-        
-        vstForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const submitBtn = document.getElementById('modal-download-btn');
-            submitBtn.textContent = "AUTHORIZING...";
-            submitBtn.style.pointerEvents = "none";
-            submitBtn.style.opacity = "0.5";
-
-            const formData = new FormData(vstForm);
-
-            fetch("/", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(() => {
-                // Trigger actual download
-                const link = document.createElement('a');
-                link.href = currentDownloadLink;
-                link.download = currentDownloadLink.split('/').pop();
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-
-                // Reset UI
-                modal.classList.remove('active');
-                submitBtn.textContent = "I AGREE, DOWNLOAD";
-                submitBtn.style.pointerEvents = "auto";
-                submitBtn.style.opacity = "1";
-                vstForm.reset();
-            })
-            .catch(err => {
-                alert("Authorization failed. Please try again.");
-                submitBtn.textContent = "I AGREE, DOWNLOAD";
-                submitBtn.style.pointerEvents = "auto";
-                submitBtn.style.opacity = "1";
-            });
-        });
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
-
-    <style>
-        @media (max-width: 768px) {
-            nav { flex-direction: column; padding: 20px; gap: 15px; }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
-            .container { padding: 120px 20px 60px; }
-            h1.card-title { font-size: clamp(2.5rem, 10vw, 3.5rem) !important; }
-            .products-grid { grid-template-columns: 1fr; gap: 20px; }
-            .card { padding: 40px 20px; }
-            .flagship-banner { padding: 40px 20px; margin-bottom: 40px; border-radius: 20px; }
-            .flagship-title { font-size: clamp(2.5rem, 12vw, 3.5rem); letter-spacing: -0.02em; }
-            .flagship-desc { font-size: 1.1rem; }
-            .feature-matrix { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
-            .waitlist-form { flex-direction: column; width: 100%; gap: 15px; }
-            .waitlist-container { flex-direction: column; gap: 20px !important; align-items: stretch !important; }
-            .flagship-card { grid-template-columns: 1fr !important; padding: 40px 20px !important; }
-            .ab-demo-container { height: 200px; margin-bottom: 40px; }
-            .ab-img { font-size: 1.5rem; }
-            .stats { flex-direction: row; gap: 10px !important; margin-top: 20px !important; margin-left: 0 !important; width: 100%; justify-content: space-between; }
-            .btn { width: 100%; justify-content: center; margin-right: 0; margin-bottom: 10px; box-sizing: border-box; }
-            .light-beam { width: 400px; }
-            footer { padding: 40px 20px; margin-top: 80px; }
-            .vst-details h3 { font-size: 1.2rem; }
-            .authority-ribbon { padding: 15px; font-size: 0.7rem; }
-            .product-visual img { box-shadow: 0 0 30px rgba(0, 191, 255, 0.2) !important; }
-        }
-    </style>
 </body>
 </html>
-
