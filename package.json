@@ -1,0 +1,12 @@
+{
+  "name": "blacklist-tech-v3",
+  "version": "1.0.0",
+  "description": "Blacklist Tech Website v3",
+  "scripts": {
+    "build": "npm run build:py",
+    "build:py": "python build.py",
+    "serve": "python -m http.server 8080 --directory dist"
+  },
+  "author": "Blacklist Tech",
+  "license": "ISC"
+}
